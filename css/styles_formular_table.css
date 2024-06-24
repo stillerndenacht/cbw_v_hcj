@@ -1,0 +1,77 @@
+body {
+  background-image: url("../img/christoph-nolte-ebTveO9Ixtg-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bolder;
+  color: yellowgreen;
+  font-stretch: extra-expanded;
+  text-shadow: 4px 1px 8px rgb(0, 0, 0);
+}
+div {
+  margin-top: 10vmin;
+  margin-bottom: 20vmax;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50rem;
+  height: 10rem;
+  background-color: rgb(240, 248, 255, 0.3);
+  text-align: center;
+  padding-bottom: 2.7rem;
+  padding-left: 1rem;
+  border-radius: 5px;
+}
+form {
+  position: absolute;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+label {
+  position: absolute;
+  left: 5;
+  color: blanchedalmond;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 4px 2px 8px rgb(46, 46, 46);
+}
+input {
+  border-radius: 5px;
+  position: absolute;
+  left: 10rem;
+  min-width: 25rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+}
+button {
+  position: absolute;
+  left: 40rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-image: linear-gradient(to right, lightgreen, lightgrey);
+  border: 5px outset;
+  border-radius: 5px;
+  border-color: lightgreen;
+  box-shadow: 10px 10px 10px;
+}
+button:hover {
+  font-weight: bolder;
+  background-image: linear-gradient(to right, green, lightgreen);
+  border-color: rgb(100, 220, 120);
+  box-shadow: 18px 18px 18px;
+}
+
+ul {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 1.4rem;
+  list-style-type: none;
+}

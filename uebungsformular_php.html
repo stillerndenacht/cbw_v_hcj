@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      label {
+        font-size: 12px;
+        margin-bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <ol>
+      <li>Die Antwort auf Aufgabe 1 ist Sonnenschein.</li>
+    </ol>
+
+    <form action="php/uebungsformular.php" method="get">
+      <table>
+        <tr>
+          <td>
+            <label for="name">Name </label><br />
+            <input type="text" name="name" id="name" required />
+          </td>
+          <td>
+            <label for="vn">Vorname </label><br />
+            <input type="text" name="vn" id="vn" required />
+          </td>
+        </tr>
+        <tr>
+          <td >
+            <label for="gebname">früherer Name </label><br />
+            <input type="text" name="gebname" id="gebname" />
+          </td>
+          <td>
+            <label for="gebdate">Geburtsdatum </label><br />
+            <input type="date" name="gebdate" id="gebdate" />
+          </td>
+          <td>
+            <label for="geschlecht">Geschlecht </label><br />
+            <input type="text" name="geschlecht" id="geschlecht" />
+          </td>
+        </tr>
+        <tr>
+          <td >
+            <label for="anschrift">bekannte Anschrift </label><br />
+            <input type="text" name="anschrift" id="anschrift" />
+          </td>
+        </tr>
+      </table>
+
+      <input type="submit" value="Absenden" />
+      <input type="reset" value="Zurücksetzen" />
+    </form>
+  </body>
+</html>

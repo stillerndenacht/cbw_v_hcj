@@ -1,0 +1,37 @@
+iframe {
+  width: 30vw;
+  height: 50vh;
+  border: 5px solid yellow;
+  box-shadow: 5px 5px 10px;
+  border-radius: 10px;
+}
+section {
+  display: inline-block;
+}
+a,
+p {
+  font-size: larger;
+  text-align: center;
+  display: block;
+  padding: 1.5vh;
+  margin: 0;
+}
+.sec2 > iframe {
+  border-color: red;
+}
+h1 {
+  background-color: chartreuse;
+  text-align: center;
+  transform: rotate(5deg);
+}
+img {
+  display: block;
+  margin-left: 40%;
+  margin-right: 40%;
+  transform: rotate(350deg);
+  transition: transform 5s;
+  transition-timing-function: ease-in-out;
+}
+img:hover {
+  transform: rotate(150deg);
+}

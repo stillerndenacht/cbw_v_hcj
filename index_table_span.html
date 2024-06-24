@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="keywords" content="was für SEO" />
+    <meta name=""description" content=""Hier ist eine Beschreibung meiner
+    Webseite">
+    <meta name="author" content="Mein Name" />
+    <meta charset="UTF-8" />
+    <title>Titel</title>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="img/Anonymous_Flaming_soccer_ball.svg"
+    />
+    <link rel="stylesheet" href="css/styles_table_span.css" />
+  </head>
+  <body>
+    <header><h1>ein Span-Tabellen-Beispiel</h1></header>
+    <img src="" alt="" width="" height="" title="" />
+    <table>
+      <thead>
+        <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>a</td>
+          <td>b</td>
+          <td>c</td>
+          <td>d</td>
+        </tr>
+        <tr>
+          <td colspan="2">a (ein colspan)</td>
+          <!-- Zellen in der Zeile verbinden-->
+          <!-- <td >b</td> --><!--diese Zelle wird vom colspan ersetzt-->
+          <td>c</td>
+          <td>d</td>
+        </tr>
+        <tr>
+          <td rowspan="2">a (ein rowspan)</td>
+          <!-- Zellen in der Spalte verbinden-->
+          <td>b</td>
+          <td>c</td>
+          <td>d</td>
+        </tr>
+        <tr>
+          <!-- <td >a</td> --><!--diese Zelle wird vom rowspan ersetzt-->
+          <td>b</td>
+          <td>c</td>
+          <td>d</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>a</td>
+          <td>b</td>
+          <td>c</td>
+          <td rowspan="2">d (kein rowspan)</td>
+          <!--rowspan über tbody hinweg funktioniert nicht-->
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>a</td>
+          <td>b</td>
+          <td>c</td>
+          <td>d</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+section{
+    background-color:darkgrey ;
+    margin: 10px;
+}
+article {
+  display: inline-block;
+  background-color: cornsilk;
+  width: 20vw;
+  margin: 0.5%;
+  color: rebeccapurple;
+}
+h2,
+p {
+  text-align: center;
+}
+.a1{
+    color: darkred;
+}
+.u1{
+    color: blue;
+}
+.p1{
+    font-weight: bolder;
+}
+.a2{
+    background-color: aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.u2{
+    font-family: 'Courier New', Courier, monospace;
+}
+.p2{
+    font-weight: lighter;
+
+}
+.s2 .u1.u2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+.s2 .p1.p2{
+    font-size: larger;
+    color: chocolate;
+}

@@ -1,0 +1,56 @@
+h2 {
+  background-color: chartreuse;
+  text-align: center;
+}
+h3{
+    background-color: darkcyan;
+    text-align: center;
+}
+p{
+    background-color: goldenrod;
+    text-align: center;
+}
+.flex-container {
+  width: 70vw;
+  height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5vh;
+  padding: 2vh;
+}
+.flex-item {
+  width: 100px;
+  height: ;
+  background-color: black;
+  color: aliceblue;
+  border: 2px solid yellowgreen;
+}
+.cont1 {
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(148, 163, 163);
+}
+.cont2 {
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: aquamarine;
+}
+.cont3 {
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: bisque;
+}
+.cont4 {
+  justify-content: flex-start;
+  align-items: baseline;
+  background-color: burlywood;
+}
+.cont5 {
+  justify-content: flex-end;
+  align-items: stretch;
+  background-color: cyan;
+}
+.cont6 {
+  justify-content: space-evenly;
+  background-color: coral;
+}

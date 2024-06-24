@@ -1,0 +1,21 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+  color: black;
+}
+.headt {
+  border: 2px solid rgb(216, 194, 83);
+  padding: 3px 7px 3px 7px;
+}
+.foott {
+  border: 2px solid rgb(205, 205, 202);
+  padding: 3px 7px 3px 7px;
+}
+p {
+  display: inline-block;
+  padding: 7px;
+}
+.article {
+  width: 400px;
+}

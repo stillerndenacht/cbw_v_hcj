@@ -1,0 +1,20 @@
+/* diese styles werden nur für die Druckansicht/den Druck verwendet */
+img {
+  display: none;
+}
+h1 {
+  transform: none;
+  /* background: red !important; */
+}
+@media print {
+  body {
+    background: white !important; /* Setzt den Hintergrund auf Weiß, falls das nötig ist */
+  }
+  .print-background {
+    background: #f0f0f0 !important; /* Ersetzt die Standard-Hintergrundfarbe */
+  } /* Stelle sicher, dass alle gewünschten Elemente ihre Hintergrundfarbe oder -bild beibehalten */
+  * {
+    -webkit-print-color-adjust: exact; /* Für Webkit-basierte Browser wie Chrome, Safari */
+    print-color-adjust: exact; /* Für andere Browser */
+  }
+}

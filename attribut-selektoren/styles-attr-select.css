@@ -1,0 +1,38 @@
+[href*="kicker"] {
+  color: red;
+}
+[href*="w3"] {
+  color: darkgreen;
+  font-size: larger;
+}
+[a*="dr"] {
+  color: green;
+} /*das funktioniert nicht weil a kein attribut ist*/
+[href*="dr"] {
+  color: violet;
+  font-weight: bolder;
+}
+[href~="https://www.kicker.de/"]
+{
+  font-weight: bolder;
+}
+
+table{
+    border: 2px solid violet;
+}
+td{
+    border: 1px solid black;
+    padding: 5px;
+}
+td:first-child{
+    background-color: red;
+}
+th:first-child{
+    font-family: 'Courier New', Courier, monospace;
+}
+td:nth-child(3n){
+    text-decoration: overline;
+}
+td:nth-child(3){
+    background-color: bisque;
+}

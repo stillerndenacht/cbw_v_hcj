@@ -1,0 +1,122 @@
+article {
+  background-color: rgb(226, 252, 233);
+  font-size: 10px;
+}
+.a1 {
+  font-size: normal;
+}
+.a2 h2,
+.a2 p {
+  font-size: 1em;
+}
+
+.a3 h2,
+.a3 p {
+  font-size: 2em;
+}
+.a4 h2,
+.a4 p {
+  font-size: 1rem;
+}
+.a5 h2,
+.a5 p {
+  font-size: 2rem;
+}
+.a6 {
+  width: 50ch;
+}
+.a6 h2,
+.a6 p {
+  font-size: 1em;
+}
+.a7 {
+  width: 50ch;
+}
+.a7 h2,
+.a7 p {
+  font-size: 1rem;
+}
+.a8 {
+  width: 50ch;
+}
+.a8 h2,
+.a8 p {
+  font-size: 2em;
+}
+.a9 {
+  width: 50ch;
+}
+.a9 h2,
+.a9 p {
+  font-size: 2rem;
+}
+.a10 {
+  width: 50lh;
+}
+.a10 h2,
+.a10 p {
+  font-size: 2em;
+}
+.a11 {
+  width: 50lh;
+}
+.a11 h2,
+.a11 p {
+  font-size: 2rem;
+}
+.a12 {
+  width: 50lw;
+}
+.a12 h2,
+.a12 p {
+  font-size: 2em;
+}
+.a13 {
+  width: 50lw;
+}
+.a13 h2,
+.a13 p {
+  font-size: 2rem;
+}
+.a14 {
+  width: 50vw;
+}
+.a14 h2,
+.a14 p {
+  font-size: 2em;
+}
+.a15 {
+  width: 50vw;
+}
+.a15 h2,
+.a15 p {
+  font-size: 2rem;
+}
+.a16 {
+  width: 50vh;
+}
+.a16 h2,
+.a16 p {
+  font-size: 2em;
+}
+.a17 {
+  width: 50vh;
+}
+.a17 h2,
+.a17 p {
+  font-size: 2rem;
+}
+.a18 {
+    width: 50%;
+  }
+  .a18 h2,
+  .a18 p {
+    font-size: 2em;
+  }
+  .a19 {
+    width: 50%;
+  }
+  .a19 h2,
+  .a19 p {
+    font-size: 2rem;
+  }

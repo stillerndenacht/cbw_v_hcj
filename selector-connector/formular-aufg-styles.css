@@ -1,0 +1,54 @@
+section {
+    margin: 2vh;
+}
+
+input[required] {
+    border: 2px solid red
+}
+
+h1::first-letter {
+    font-size: xxx-large;
+    color: red;
+}
+
+h1::selection {
+    background-color: gold;
+}
+
+table {
+    border: 1px solid black;
+    padding: 4px;
+}
+
+table * {
+    padding: 5px;
+    margin: 5px;
+}
+
+th {
+    border: 1px solid red;
+}
+
+td {
+    border: 1px solid green;
+}
+
+table * {
+    background-color: aqua;
+}
+
+table ul {
+    border: 1px solid blue;
+}
+
+/* die folgende sieht man nicht, weil sie von table *{aqua} überschrieben wird*/
+table>* {
+    background-color: brown;
+}
+
+ul>* {
+    background-color: chartreuse;
+}
+body:last-child h2::before{
+    content: "Tabellenüberschrift mit body:last-child h2::before eingefügt ";
+}

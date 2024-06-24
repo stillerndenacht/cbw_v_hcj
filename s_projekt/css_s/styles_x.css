@@ -1,0 +1,31 @@
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+}
+p {
+  text-align: center;
+  margin: 70px;
+  padding: 70px;
+}
+div > p {
+  color: red;
+} /*alle p in einem div*/
+
+p > a {
+  text-decoration: none;
+  cursor: crosshair;
+}
+p>a:hover{
+  font-weight: bolder;
+}
+.svg_container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.svg_container>img{padding: 10px;}

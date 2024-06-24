@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <!--ggf. <html lang="en" für Sprache der Website-->
+  <head>
+    <meta name="keywords" content="was für SEO" />
+    <meta name=""description" content=""Hier ist eine Beschreibung meiner
+    Webseite">
+    <meta name="author" content="Veit Lohse" />
+    <meta charset="UTF-8" />
+    <base href="" target="_blank" />
+    <link rel="stylesheet" type="text/css" href="css/styles-aufg3.css" />
+    <title>Veit</title>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="css/1536010776.svg"
+    />
+  </head>
+  <body>
+    <h1>Aufgabe 3 Veit Lohse</h1>
+    <section class="sec1">
+      <form>
+        <table>
+          <tr>
+            <th colspan="2">Antragsteller/in</th>
+          </tr>
+          <tr>
+            <td><label for="name">Name, Vorname:</label></td>
+            <td class="tdperso">
+              <input
+                id="name"
+                type="text"
+                name="name"
+                size="35"
+                maxlength="50"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="adress">Straße, Hs.-Nr.:</label></td>
+            <td class="tdperso">
+              <input
+                id="adress"
+                type="text"
+                name="adress"
+                size="35"
+                maxlength="50"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="telefon">Telefon:</label></td>
+            <td class="tdperso">
+              <input
+                id="telefon"
+                type="tel"
+                name="telefon"
+                size="35"
+                maxlength="50"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="email">E-Mail-Adresse:</label></td>
+            <td class="tdperso">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                size="35"
+                maxlength="50"
+                required
+              />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </section>
+    <section class="sec2">
+      <ol>
+        <li>
+          <input type="checkbox" id="ersta" /><label for="ersta"
+            >Erstantrag für </label
+          ><input type="checkbox" id="ersta1" /><label for="ersta1"
+            >1 Jahr <span>(30€)</span> </label
+          ><input type="checkbox" id="ersta2" /><label for="ersta2"
+            >2 Jahr <span>(60€)</span>
+          </label>
+        </li>
+        <li class="unbold">
+          <input type="checkbox" id="verl" /><label for="verl"
+            >Verlängerung ohne KFZ-Wechsel für </label
+          ><input type="checkbox" id="verl1" /><label for="verl1"
+            >1 Jahr <span>(30€)</span> </label
+          ><input type="checkbox" id="verl2" /><label for="verl2"
+            >2 Jahr <span>(60€)</span>
+          </label>
+        </li>
+        <li class="unbold2">
+          <input type="checkbox" id="kaender" /><label for="kaender"
+            >KFZ-Änderung </label
+          ><input type="checkbox" id="wohnwe" /><label for="wohnwe"
+            >Wohnsitzwechsel</label
+          ><br /><input type="checkbox" id="guelt-abl" /><label for="guelt-abl"
+            >Gültigkeit bis Ablauf alter Ausweis <span>(15€)</span> </label
+          ><br /><input type="checkbox" id="guelt1" /><label for="guelt1"
+            >1 Jahr neu <span>(30€)</span> </label
+          ><input type="checkbox" id="guelt2" /><label for="guelt2"
+            >2 Jahre neu <span>(60€)</span>
+          </label>
+        </li>
+      </ol>
+      <ul>
+        <li>
+          <input type="checkbox" id="ppost" /><label for="ppost"
+            >Per Post: Alter Bewohnerparkausweis liegt dem Antrag bei.
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="pmail" /><label for="pmail"
+            >Per E-Mail: Foto des vernichteten/zerschnittenen
+            Bewohnerparkausweises ist beigefügt.</label
+          >
+        </li>
+      </ul>
+    </section>
+    <section>
+      <label for="amtkennz">Amtliches Kennzeichen: </label
+      ><div class="amt"><input
+        id="amtkennz"
+        type="text"
+        name="amtkennz"
+        placeholder="Bitte das amtliche Kennzeichen eingeben"
+        size="35"
+        maxlength="50"
+        required
+      /></div>
+    </section>
+    <section class="sec5"><input type="submit" /><input type="reset" /></section>
+    <p>Die Checkboxen sind unbelehrbar, da kommt nix über den Browser-Style (siehe css)</p>
+  </body>
+</html>
