@@ -1,0 +1,23 @@
+article {
+    background: #e9d9c1;
+}
+ 
+h2 {
+    background: #cebea7;
+}
+ 
+.article_01 {
+    width: 50%;
+    height: 200px;
+    /* Der überstehende Text wird verborgen.  
+    overflow: hidden; */
+    /* Der überstehende Text wird gescrollt.  
+    overflow: scroll; */
+    /* Der überstehende Text wird gescrollt, wenn
+    es nötig ist.  */
+    overflow: auto;
+ 
+    overflow-x: auto;
+    overflow-y: auto;
+}
+/* Bau doch mal ne Tabelle oder ein Bild mit Overflow y */
