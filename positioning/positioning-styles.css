@@ -1,0 +1,50 @@
+/* body{
+    position: static;
+} */
+[src="cookie.svg"]{
+    width: 100px;
+}
+p{
+    position: fixed;
+    bottom: 5%;
+    right: 40%;
+    background-color: bisque;
+}
+.card{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+ }
+[title="JoC"] {
+  position: relative;
+  transform: translate(0px, 0px) rotate(0deg);
+}
+[title="JoD"] {
+  position: relative;
+  transform: translate(20px, -300px) rotate(10deg);
+}
+[title="JoH"] {
+  position: relative;
+  transform: translate(40px, -600px) rotate(20deg);
+}
+[title="JoS"] {
+    position: relative;
+    transform: translate(60px, -900px) rotate(30deg);
+  }
+  [title="KoC"] {
+    position: relative;
+    transform: translate(80px, -1200px) rotate(40deg);
+  }
+  [title="KoH"] {
+    position: relative;
+    transform: translate(0px, 0px) rotate(50deg);
+  }
+  [title="KoS"] {
+    position: relative;
+    transform: translate(0px, 0px) rotate(60deg);
+  }
+  [title="QoC"] {
+    position: relative;
+    transform: translate(0px, -250px) rotate(70deg);
+  }
