@@ -1,54 +1,101 @@
+
 section {
-    margin: 2vh;
+  margin: 2vh;
 }
 
 input[required] {
-    border: 2px solid red
+  border: 2px solid red;
 }
 
 h1::first-letter {
-    font-size: xxx-large;
-    color: red;
+  font-size: xxx-large;
+  color: red;
 }
 
 h1::selection {
-    background-color: gold;
+  background-color: gold;
 }
 
 table {
-    border: 1px solid black;
-    padding: 4px;
+  border: 1px solid black;
+  padding: 4px;
 }
 
 table * {
-    padding: 5px;
-    margin: 5px;
+  padding: 5px;
+  margin: 5px;
 }
 
 th {
-    border: 1px solid red;
+  border: 1px solid red;
 }
 
 td {
-    border: 1px solid green;
+  border: 1px solid green;
 }
 
 table * {
-    background-color: aqua;
+  background-color: aqua;
 }
 
 table ul {
-    border: 1px solid blue;
+  border: 1px solid blue;
 }
 
 /* die folgende sieht man nicht, weil sie von table *{aqua} überschrieben wird*/
-table>* {
-    background-color: brown;
+table > * {
+  background-color: brown;
 }
 
-ul>* {
-    background-color: chartreuse;
+ul > * {
+  background-color: chartreuse;
 }
-body:last-child h2::before{
-    content: "Tabellenüberschrift mit body:last-child h2::before eingefügt ";
+body:last-child h2::before {
+  content: "Tabellenüberschrift mit body:last-child h2::before eingefügt ";
+}
+/* alle p die Geschwister von h3 sind (also in der selben Ebene) */
+h3 ~ p {
+  background-color: salmon;
+}
+h3 + p {
+  font-style: italic;
+  color: white;
+}
+.sec4 {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  background-color: aqua;
+  border: 2px solid green;
+}
+
+.sec4 > div {
+  border: 3px solid red;
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+}
+.sec4 > div > div {
+  width: 50px;
+  height: 20px;
+  border: inherit;
+  background-color: aliceblue;
+}
+
+.sec5 {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  background-color: aqua;
+  border: 2px solid green;
+  font-family: "Courier New", Courier, monospace;
+}
+.sec5 p {
+  border: 1px solid rebeccapurple;
+  background-color: azure;
+}
+.sec5 .in-p2 {
+  font-family: initial;
+  background-color: unset;
+
 }
