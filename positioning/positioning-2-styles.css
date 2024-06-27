@@ -1,0 +1,81 @@
+body {
+  width: 100vw;
+  height: 150vh;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(
+    farthest-side at 95% 5%,
+    sienna,
+    gold,
+    rgb(43, 43, 0),
+    black
+  );
+  font-family: "Courier New", Courier, monospace;
+}
+h1 {
+  color: cornsilk;
+}
+div {
+  color: cornsilk;
+  text-align: center;
+}
+[class^="div"] {
+  width: 15vw;
+  height: 20vh;
+  margin: 3pt;
+  border: 2pt solid;
+  background-color: silver;
+}
+.contN {
+  display: inline-block;
+  padding: 2vw;
+  background-color: rgb(43, 43, 0);
+  border: 2px solid rgb(13, 251, 208);
+}
+.div1N {
+  border-color: rgb(13, 251, 208);
+}
+.div2N {
+  border-color: rgb(13, 251, 208);
+}
+.div3N {
+  border-color: rgb(13, 251, 208);
+}
+.divBoN {
+  display: inline-block;
+  border-color: rgb(13, 251, 208);
+}
+
+.divBo {
+  border-color: rgb(255, 225, 0);
+  position: sticky;
+  top: 5px;
+  translate: 80vw;
+}
+.cont {
+  position: relative;
+  display: inline-block;
+  padding: 2vw;
+  background-color: rgb(43, 43, 0);
+  border: 2px solid gold;
+}
+.div1 {
+  border-color: ghostwhite;
+  position: absolute;
+  translate: 15vw 15vh;
+}
+.div2 {
+  position: relative;
+  translate: 15vw -10vh;
+  border-color: rgb(241, 219, 94);
+}
+.div3 {
+  position: fixed;
+  top: 50vh;
+  border-color: rgb(253, 182, 101);
+}
+.divBo2 {
+  border-color: rgb(255, 225, 0);
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}

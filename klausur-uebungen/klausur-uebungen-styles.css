@@ -1,0 +1,39 @@
+.element{
+    box-sizing: border-box;
+    width: 200px;
+    height: 100px;
+    padding: 25px;
+    border: 3px solid blue;
+    background-color: cornsilk;
+}
+.elementb{    
+    width: 200px;
+    height: 100px;
+    padding: 25px;
+    border: 3px solid blue;
+    background-color: cornsilk;
+}
+@media  screen and (max-width:40em) {
+    .elementb{display: none;}
+}
+article{
+    font-size: smaller;
+}
+.elementc{
+    font-size: 1em;
+}
+.elementd{
+    font-size: 1rem;
+}
+.elemente{
+    font-size: 2em;
+}
+.elementf{
+    font-size: 2rem;
+}
+div.content p{
+    background-color: green;
+}
+.content p{
+    background-color: orange;
+}

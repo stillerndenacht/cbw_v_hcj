@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <!--ggf. <html lang="en" für Sprache der Website-->
+  <head>
+    <meta name="keywords" content="was für SEO" />
+    <meta name=""description" content=""Hier ist eine Beschreibung meiner
+    Webseite">
+    <meta name="author" content="Mein Name" />
+    <meta charset="UTF-8" />
+    <base href="" target="_blank" />
+    <link rel="stylesheet" type="text/css" href="positioning-2-styles.css" />
+    <title>Titel</title>
+    <link rel="icon" type="image/svg+xml" href="" />
+  </head>
+  <body>
+    <h1>Positioning 2</h1>
+    <div class="divBo">
+      div im Body 2
+      <p>
+        position: sticky;<br />
+        top: 5px;<br />
+        translate: 80vw;<br />sticky reagiert nicht auf left: oder right:
+      </p>
+    </div>
+    <div class="contN">
+      container
+      <p>inner-divs<br />in normaler Position<br />display: inline-block;</p>
+      <div class="div1N">div 1</div>
+      <div class="div2N">div 2</div>
+      <div class="div3N">div 3</div>
+    </div>
+    <div class="divBoN">
+      div im Body
+      <p>display: inline-block;</p>
+    </div>
+    <div class="cont">
+      container<br />display: inline-block;
+      <div class="div1">
+        div 1 im Container
+        <p>
+          position: absolute;<br />
+          translate: 15vw 15vh;<br />absolut bezieht sich auf das Parent
+        </p>
+      </div>
+      <div class="div2">
+        div 2 im Container
+        <p>
+          position: relative;<br />
+          translate: 15vw -10vh;<br />auch relativ bezieht sich auf die Position
+          im Parent
+        </p>
+      </div>
+      <div class="div3">
+        div 3 im Container
+        <p>position: fixed;<br />top: 50vh;</p>
+      </div>
+    </div>
+    <div class="divBo2">
+      div im Body
+      <p>
+        position: fixed;<br />bottom: 5px; <br />right: 5px;<br />fixed bezieht
+        sich auf den Viewport
+      </p>
+    </div>
+  </body>
+</html>
