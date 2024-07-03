@@ -15,6 +15,10 @@ console.log("A != b ", A != b);
 console.log("A !== b ", A !== b);
 
 //String-Operationen
+let e =""; let f = 1+e; //ein leerer String in den eine Zahl geschrieben wird, macht die Zahl zum String
+console.log(typeof f, f);
+console.log(typeof e, e);
+
 let Du = "Du";
 let DU = "DU";
 let Ich = "Ich";

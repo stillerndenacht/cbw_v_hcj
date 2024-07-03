@@ -1,7 +1,7 @@
 // Sind alle Fälle abgedeckt?
 // Was ist, wenn ich das Alter differenzierter auswerten möchte?
 let alter = "65";
-debugger
+debugger;
 if (alter < 18) {
   console.log("Kind");
 }
@@ -19,3 +19,16 @@ else if (alter >= 18 && alter <= 30) {
 } else {
   console.log("impossible");
 }
+
+//Ternärer Operator
+let alter2 = 40;
+console.log("alter2 :", alter2);
+let tern_op =
+  alter2 > 30 && alter2 < 70
+    ? console.log("Arbeiter, jeden Tag")
+    : console.log("Rentner");
+
+let alter3 = 35;
+console.log("alter3 :", alter3);
+let ternop = alter3 > 30 && alter3 < 70 ? "Arbeiter, jeden Tag" : "Rentner";
+console.log(ternop);
