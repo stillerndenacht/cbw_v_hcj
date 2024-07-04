@@ -68,5 +68,5 @@ let z = true;
 console.log("Ausschließlich wenn eines true ist, darf alles true werden.")
 //normales oder - mindestens eines muss true sein um Ausgabe true zu bekommen
 console.log(x || y || z);
-//ausschließliches oder - nur eines darf true sein, um Ausgabe 1 zu bekommen
+//ausschließliches oder - nur eines darf true sein, um Ausgabe 1 zu bekommen funktioniert aber nicht korrekt siehe operators_oder_my.js
 console.log(x ^ y ^ z);

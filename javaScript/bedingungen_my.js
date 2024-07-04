@@ -21,6 +21,7 @@ else if (alter >= 18 && alter <= 30) {
 }
 
 //Ternärer Operator
+// variable = Bedingung ? true-Ausgabe : false-Ausgabe
 let alter2 = 40;
 console.log("alter2 :", alter2);
 let tern_op =
