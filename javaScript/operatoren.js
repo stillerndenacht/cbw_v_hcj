@@ -52,7 +52,7 @@ let c = true;
 // a = false; b = false; c = true => true
 // ALLE ANDEREN FÄLLE sollen false werden.
 let ergebnis = (a && !b && !c)  || (!a && b && !c) || (!a && !b && c);
-             //true && true && true
+             true && true && true
 
 let warm = true;
 let sunny = true;
@@ -110,3 +110,17 @@ console.log(a + a++ + 2)
 console.log(a + ++a + 2)
 console.log(a + ++a + 2 + a)
 console.log(a + a++ + 2 + a)
+
+
+
+// 5 ^ 8 
+// Bitmuster:
+// 0101 => 0*8 + 1*4 + 0*2 + 1*1
+// 1000 => 1*8 + 0*0 + 0*0 + 0*0
+// ---------
+// 1101 => 13 XOR ^
+
+// Boolean-Variablen
+// intern: 0 false, 1 true
+// 00000000 
+// 00000001 
