@@ -9,24 +9,37 @@
 // }
 debugger;
 function primStart() {
-  // let num1 = prompt("start");
-  // let num2 = prompt("end");
-  // let num1 = 1;
-  // let num2 = 1;
-  // for (let x = 20; x  > 2; x--) {
-  //   for (let y = num2; y <= x/2; y++) {
-  //     //let primq = y % x;
-  //     if (x % y != 0) {
-  //       console.log(x, y, "ist eine Primzahl", y % x);
-  //       break;
-  //     }
-  //   }
-  let x = 20;
-  let y = 2;
-  for (let y = 3; y <= x ; y++) {
-    if (x % y != 0 && y != x) {
-      console.log("x: ", x, "y: ", y, "% ", x % y);
+  let num1 = prompt("start");
+  let num2 = prompt("end");
+  
+  let end = num2;
+  let start = num1;
+  let y = 0;
+  let prim = 0;
+  var y1 = 0;
+  let i = 1;
+  for (let z = start; z <= end; z++) {
+    
+    //console.log("z1:", z, "max x:", x);
+    for (y = 2; y <= z; y++) {
+      if (z % y === 0 && !(z == y)) {
+        // console.log(" z2:", z,  " y:", y, " %:", z % y);
+        prim = 0;
+        y1 = y;
+        break;
+      } else if (!(z==y)){
+        prim = 1;
+        y1 = y;
+        
+        // break;
+        // console.log(" z2:", z, " y:", y, " %:", z % y);
+      }
+      
     }
+    if( prim = 1 && (z % y !=0)){
+      var i1 = i++;
+      
+     console.log("lfnr.:", i1, "\tdie Primzahl lautet z2:", z,  "\tgetestet bis Teiler y:", y1, "\t%:", z % y1);}
   }
 }
 
