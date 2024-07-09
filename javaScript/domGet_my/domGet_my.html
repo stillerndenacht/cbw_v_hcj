@@ -7,6 +7,7 @@
     <meta name="author" content="Mein Name" />
     <meta charset="UTF-8" />
     <base href="" target="_blank" />
+
     <link rel="stylesheet" type="text/css" href="domGet_my_styles.css" />
     <title>domGet</title>
     <!-- <link rel="icon" type="image/svg+xml" href="" /> -->
@@ -14,13 +15,32 @@
   <body>
     <h1>domGet - HTML und javaScript</h1>
     <form action="">
-    <input type="radio" name="wahlarbeit" id="du" value="du" /><label for="du">Du</label>
-    <input type="radio" name="wahlarbeit" id="ich" value="ich" /><label for="ich">Ich</label>
-    <input type="radio" name="wahlarbeit" id="wir" value="wir" /><label for="wir">Wir</label>
-    <input type="button" onclick="getWahl()" value="Wähle">
-</form>
+      <input type="radio" name="wahlarbeit" id="du" value="du" /><label for="du"
+        >Du</label
+      >
+      <input type="radio" name="wahlarbeit" id="ich" value="ich" /><label
+        for="ich"
+        >Ich</label
+      >
+      <input type="radio" name="wahlarbeit" id="wir" value="wir" /><label
+        for="wir"
+        >Wir</label
+      >
+      <input type="button" onclick="getWahl()" value="Wähle" />
+    </form>
     <p>Wer macht die Arbeit?</p>
-    <div class="dot" onmouseover="changeColor()"></div>
-    <script src="domGet_my.js" ></script>
+    <div
+      id="dot"
+      onmouseover="changeColor1(this)"
+      onmouseout="resetColor1(this)"
+    >
+      Mouse over funktioniert hier über function-Aufruf im tag
+    </div>
+
+    <div id="dot2">Hier funktioniert Mouse over über addEventlistener</div>
+    <div class ="dot3">Hier funktioniert Mouse over über addEventlistener</div>
+    <div class ="dot3">Hier funktioniert Mouse over über addEventlistener</div>
+    <div class ="dot3">Hier funktioniert Mouse over über addEventlistener</div>
+    <script src="domGet_my.js"></script>
   </body>
 </html>
