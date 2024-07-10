@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tamagotchi</title>
+    <link rel="stylesheet" href="7.3tamagotchi.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Tamagotchi</h1>
+    </header>
+    <section>
+      <div
+        id="erste"
+        onmouseover="drucken()"
+        onclick="drucken2()"
+        onmouseout="drucken3()"
+      ><div id="whenfeed"></div></div>
+    </section>
+    <section>
+      <div id="apfel" onmouseover="apfel()" onclick="feed(this)"></div>
+    </section>
+    <section>
+      <div id="paprika" onmouseover="paprika()"></div>
+    </section>
+    <section>
+      <div id="aubergine" onmouseover="aubergine()"></div>
+    </section>
+    <section>
+      <div id="croissant" onmouseover="croissant()"></div>
+    </section>
+
+    <footer>
+      <p>&copy; CBWschule</p>
+    </footer>
+    <script src="7.3tamagotchi.js"></script>
+  </body>
+</html>
