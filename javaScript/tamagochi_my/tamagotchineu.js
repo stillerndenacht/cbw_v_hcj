@@ -71,11 +71,22 @@ function changegemuese() {
     strawberry();
     console.log(gemuese);
   }
-//   console.log(gemuese);
-
-  // var change =
 }
+// -------gemüse string kürzen / essen ----
 
+var stringgemuese = "";
+function essen() {
+  stringgemuese = wf.innerHTML;
+//  console.log(stringgemuese.length);
+//  console.log(stringgemuese);
+ let gemueseessen = stringgemuese.substring(0, 2);
+//  console.log(gemueseessen); 
+ let stringnew = stringgemuese.substring(2, stringgemuese.length);
+ wf.innerHTML = stringnew;
+ if (gemueseessen == `\u{1F34B}`){
+  drucken(); //Zitronengesicht
+ }
+}
 /*
 
 apfel : U+1F34E
