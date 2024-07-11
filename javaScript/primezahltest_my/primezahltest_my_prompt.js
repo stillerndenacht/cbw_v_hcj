@@ -1,4 +1,4 @@
-debugger;
+// debugger;
 function primStart() {
   // let num1 = prompt("Geben Sie eine Startzahl ein");
   // let num2 = prompt(
@@ -53,6 +53,11 @@ function primStart() {
   } else {
     // start = num1;
     // end = num2;
+    // let numA = Number(num1);
+    // let numB = Number(num2);
+    // console.log(typeof numA);
+    // primGo(numA, numB);
+
     primGo(num1, num2);
   }
 }
