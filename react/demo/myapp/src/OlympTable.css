@@ -1,0 +1,16 @@
+table {
+    border: 2px solid;
+    border-color: gold;
+    background-color: grey;
+    width: 100%;
+    color: beige;
+}
+th, td {
+    padding: 7px;    
+    border: 1px solid;
+    border-color: ghostwhite;
+}
+tr:hover{
+    background-color: darkcyan;
+    color: gold;
+}
