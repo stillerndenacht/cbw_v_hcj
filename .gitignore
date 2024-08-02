@@ -1,3 +1,8 @@
 
 /Klausuren
 /Klausur*
+/react/demo/node_modules
+**/node_modules
+**/package-lock.json
+**/package.json
+**/src_buch
