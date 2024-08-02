@@ -1,12 +1,9 @@
 
 /Klausuren
 /Klausur*
-<<<<<<< HEAD
-
-=======
 /react/demo/node_modules
 **/node_modules
 **/package-lock.json
 **/package.json
 **/src_buch
->>>>>>> 2e0ead1e4d0b110abdfc54c50c51e1d91079bd17
+
