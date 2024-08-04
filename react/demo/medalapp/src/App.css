@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  background-image: url("Olympic_rings_with_transparent_rims.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(134, 179, 124);
+  height: 100vh;
+
 }
 
 .App-logo {
@@ -32,6 +39,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
