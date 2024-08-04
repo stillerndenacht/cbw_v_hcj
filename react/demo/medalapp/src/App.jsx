@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
+import MedalTable from './MedalTable';
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     
     <div className="App">
       <Header></Header>
+      <MedalTable></MedalTable>
     </div>
   );
 }
