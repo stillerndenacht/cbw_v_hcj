@@ -4,10 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import SiteTitle from "./SiteTitle";
+import SiteLogo from "./SiteLogo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <SiteLogo></SiteLogo>
     <SiteTitle></SiteTitle>
     <App />
   </React.StrictMode>

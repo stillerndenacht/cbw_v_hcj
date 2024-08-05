@@ -1,5 +1,4 @@
 import React from "react";
-import laender from "./Laender";
 import PropTypes from "prop-types";
 
 function LaenderItem({ land }) {
@@ -21,7 +20,7 @@ LaenderItem.propTypes = {
     gold: PropTypes.number.isRequired,
     silver: PropTypes.number.isRequired,
     bronze: PropTypes.number.isRequired,
-    gsb: PropTypes.string.isRequired,
   }).isRequired,
 };
 export default LaenderItem;
+// import in MedalTable.jsx
