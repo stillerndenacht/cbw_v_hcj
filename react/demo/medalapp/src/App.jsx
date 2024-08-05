@@ -17,4 +17,5 @@ function App() {
 export default App;
 
 /* Aufgabe: Medaillenspiegel in REACT umsetzen mit Objektliteralen und als Liste
-03 Listing 27 als Vorlage */
+03 Listing 27 als Vorlage 
+kleine Buttons in jeden MedaillienZelle +/- Listing 34 */

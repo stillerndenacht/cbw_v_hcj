@@ -1,4 +1,4 @@
-// import React from "react";
+// import in MedalTable.jsx
 const laender = [
   {
     id: 1,
