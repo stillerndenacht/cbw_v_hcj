@@ -5,7 +5,11 @@ import laender from "./Laender";
 function MedalChanger(landx) {
   const [medalcount, setMedalcount] = useState(landx);
   console.log(medalcount);
-
+  function MedalAdd(x) {
+    console.log("this is x", x);
+    let newcount = x.landx.gold + 1;
+    return newcount;
+  }
   switch (landx.medaltype) {
     case "gold":
       console.log("case gold");
@@ -24,8 +28,4 @@ function MedalChanger(landx) {
 }
 export default MedalChanger;
 
-function MedalAdd(x) {
-  console.log("this is x", x);
-  let newcount = x.landx.gold + 1;
-  return newcount;
-}
+
