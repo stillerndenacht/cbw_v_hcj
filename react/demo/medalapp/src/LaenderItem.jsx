@@ -1,18 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import laender from "./Laender";
+import MedalChanger from "./MedalChanger";
 
 function LaenderItem({ land }) {
-  function MedalChanger(id, gold) {
-    const [medalcount, setMedalcount] = useState(gold);
-    function changeMedalcount() {medalcount = medalcount +1;}
-    return (
-      <div class="buttonbox">
-        <button onClick={() => setMedalcount(changeMedalcount)}> + </button>
-        <button> - </button>
-      </div>
-    );
-  }
+  
   return (
     <tr>
       <td>{land.land}</td>
@@ -21,7 +14,7 @@ function LaenderItem({ land }) {
 
         {/* <button onClick={() => MedalChanger()}> + </button>
           <button> - </button> */}
-        <MedalChanger></MedalChanger>
+        <MedalChanger landx={land} medaltype="gold"></MedalChanger>
       </td>
       <td>{land.silver ? land.silver : 0}</td>
       <td>{land.bronze ? land.bronze : 0}</td>
