@@ -1,11 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useState } from "react";
+import laender from "./Laender";
+import MedalChanger from "./MedalChanger";
 
 function LaenderItem({ land }) {
+  // let landz = {};
+  // if(landx){landz = {...landx}}
+  // else {landz = land;}
+  console.log ("Log Laenderitem", land.gold, land.id);
   return (
     <tr>
       <td>{land.land}</td>
-      <td>{land.gold ? land.gold : 0}</td>
+      <td>
+        {land.gold ? land.gold : 0}
+
+        {/* <button onClick={() => MedalChanger()}> + </button>
+          <button> - </button> */}
+        <MedalChanger landx={land} medaltype="gold"></MedalChanger>
+      </td>
       <td>{land.silver ? land.silver : 0}</td>
       <td>{land.bronze ? land.bronze : 0}</td>
       <td>{land.gold + land.silver + land.bronze}</td>

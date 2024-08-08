@@ -2,6 +2,7 @@ import React from "react";
 import laender from "./Laender";
 import LaenderItem from "./LaenderItem";
 import "./MedalTable.css";
+import { useState } from "react";
 
 // const laender = [
 //     {
@@ -12,16 +13,9 @@ import "./MedalTable.css";
 //       bronze: 9,
 //       gsb: "this.gold + this.silver + this.bronze"
 //     },
-//     {
-//       id: 2,
-//       land: "Vereinigte Staaten von Amerika",
-//       gold: 15,
-//       silver: 25,
-//       bronze: 25,
-//       gsb: "this.gold + this.silver + this.bronze"
-//     },
 //   ];
 function MedalTable() {
+ 
   return (
     <table>
       <thead>
