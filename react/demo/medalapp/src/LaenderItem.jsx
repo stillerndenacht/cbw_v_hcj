@@ -5,7 +5,10 @@ import laender from "./Laender";
 import MedalChanger from "./MedalChanger";
 
 function LaenderItem({ land }) {
-  
+  // let landz = {};
+  // if(landx){landz = {...landx}}
+  // else {landz = land;}
+  console.log ("Log Laenderitem", land.gold, land.id);
   return (
     <tr>
       <td>{land.land}</td>
