@@ -50,22 +50,78 @@ while start != "exit":
         print(exitmsg)
         break
     else:
-        
-
         for x in range(
             0, len(nutzerliste), 1
         ):  # loop durch nutzerliste Abgleich der ID
             start = int(start)
             print(x, start)
             nutzerx = nutzerliste[x]
+            print(nutzerx)
             if nutzerx[0] == start:
                 print(x, nutzerx[0], start)
-                pass # Pin Eingabe - bei Erfolg Bereitstellung aller Daten
-            else:
-                print("Diese Nutzer ID existiert nicht.")
-                break
+                # Pin Eingabe - bei Erfolg Bereitstellung aller Daten
+                for y in range(1, 4, 1):
+                    pin = input("Bitte die PIN eingeben : ")
+                    if pin == "exit":
+                        print(exitmsg)
+                        exit()
+                    else:
+                        nutzerxpin = nutzerx[2]
+                        pin = int(pin)
+                        print(pin, "pin", nutzerxpin, "nutzerx[2]", nutzerx[2])
+                        if nutzerxpin == pin:
+                            print("yes", nutzerxpin, pin)
+                            nutzerxname = nutzerx[1]
+                            print(f"Herzlich willkommen {nutzerxname}")
+                            nutzerxkontenlist = nutzerx[3]
+                            for z in range(0, len(nutzerxkontenlist), 1):
+                                nutzerxkonto = nutzerxkontenlist[z]
+                                usekonto = input(
+                                    f"Wollen sie das Konto {nutzerxkonto[0]} bearbeiten j / n / exit : "
+                                )
+                                # print(nutzerxkonto[0])
+                                if usekonto == "j":
+                                    print(
+                                        f"Was wollen sie mit Konto {nutzerxkonto[0]} tun?"
+                                    )
+                                    kontouse = input("""
+                                             Tippen Sie für 
+                                                    Auszahlung  'a'
+                                                    Einzahlung  'e'
+                                                    Kontostand  'k'
+                                                    Abbruch     'exit'
+                                                    """)
+                                    match kontouse:
+                                        case 'a':
+                                            print(f"Auszahlung von Konto {nutzerxkonto[0]}")
+                                        case 'e':
+                                            print(f"Einzahlung auf Konto {nutzerxkonto[0]}")
+                                        case 'k':
+                                            print(f"Kontostand von Konto {nutzerxkonto[0]}")
+                                        case 'exit':
+                                            print(exitmsg)
+                                            exit()
+                                        case _:
+                                            print(f"Ungültige Eingabe für Konto {nutzerxkonto[0]}")
+                                            break        
+                                elif usekonto == "exit":
+                                    print(exitmsg)
+                                    exit()
+
+                        else:
+                            print("Die PIN ist falsch")
+                            print(f"Sie haben noch {3-y} Versuche.")
+
+                else:
+                    print(
+                        "Sie haben die maximale Anzahl PIN erreicht! \n\tDer Automat wird abgebrochen."
+                    )
+                    exit()
         else:
+            print("Diese Nutzer ID existiert nicht.")
             break
+        # else:
+        #     break
 else:
     print(exitmsg)
     exit()
