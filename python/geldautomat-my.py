@@ -68,9 +68,9 @@ while start != "exit":
                     else:
                         nutzerxpin = nutzerx[2]
                         pin = int(pin)
-                        print(pin, "pin", nutzerxpin, "nutzerx[2]", nutzerx[2])
+                        # print(pin, "pin", nutzerxpin, "nutzerx[2]", nutzerx[2])
                         if nutzerxpin == pin:
-                            print("yes", nutzerxpin, pin)
+                            # print("yes", nutzerxpin, pin)
                             nutzerxname = nutzerx[1]
                             print(f"Herzlich willkommen {nutzerxname}")
                             nutzerxkontenlist = nutzerx[3]
