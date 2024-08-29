@@ -1,4 +1,4 @@
-STATIONS_ID;MESS_DATUM;QN_9;TT_TU;RF_TU;eor
+list(listsorter)STATIONS_ID;MESS_DATUM;QN_9;TT_TU;RF_TU;eor
        7364;2022021700;    3;  13.5;  75.0;eor
        7364;2022021701;    3;  13.7;  77.0;eor
        7364;2022021702;    3;  11.1;  76.0;eor
