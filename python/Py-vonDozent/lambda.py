@@ -138,6 +138,54 @@ kriterium2 = input("Zweites Kriterium: ")
 sortierte_liste = sorted(autos, key=lambda x: (x[kriterium1], x[kriterium2]))
 print(sortierte_liste)
 
+#---------
+# Beispiel für eine Sortierung mit dicts
+# auto1 = {
+#     "PS" : 150,
+#     "Preis" : 15000
+# }
+ 
+# auto2 = {
+#     "PS" : 190,
+#     "Preis" : 12000
+# }
+ 
+# auto3 = {
+#     "PS" : 90,
+#     "Preis" : 19000
+# }
+ 
+# auto4 = {
+#     "PS" : 190,
+#     "Preis" : 25000
+# }
+ 
+# auto5 = {
+#     "PS" : 180,
+#     "Preis" : 15000
+# }
+ 
+# autos = [ auto1, auto2, auto3, auto4, auto5 ]
+ 
+# kriterium1 = input("Erstes Kriterium: ")
+ 
+# absteigend = input("Soll das erste Kriterium absteigend sortiert werden: ")
+# if absteigend == "yes":
+#     fac = -1
+# else:
+#     fac = 1
+ 
+# kriterium2 = input("Zweites Kriterium: ")
+ 
+# absteigend_2 = input("Soll das zweite Kriterium absteigend sortiert werden: ")
+# if absteigend_2 == "yes":
+#     fac2 = -1
+# else:
+#     fac2 = 1
+ 
+# sortierte_liste = sorted(autos, key=lambda x: (fac * x[kriterium1], fac2 * x[kriterium2]))
+# print(sortierte_liste)
+#----------
 
 # Taschenrechner mit nur einer Funktion
 # func soll eine (Lambda-Funktion) sein, die an
