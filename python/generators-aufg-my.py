@@ -1,3 +1,4 @@
+# -------------- Aufgabe 10 -----------------------
 def generator_divisible(n):
     for i in range(200):
         if i > 0 and i % n == 0:
@@ -10,7 +11,6 @@ print(next(divisible))
 
 def generator_divisible2(n, r):
     #print("range",r)
-    #while True:
     for i in range(r):
         #print(i)
         if i > 0 and i % n == 0:
