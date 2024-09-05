@@ -1,55 +1,58 @@
+import random
 
-import time
+import tamamodulemy
 
 
 class tama:
-    def __init__(self, name="tama", fitness=10, hunger=1):
+    def __init__(self, name="tama", fitness=10, hunger=1,x=0):
         self.fitness = fitness
         self.name = name
         self.hunger = hunger
         self.dead = False
+        self.x = x
+    
+    def lifeloop(self):
+        while True:
+            what = self.question()
+            if what == "exit":
+                print("break lifeloop")
+                break
+            break
+
+    def question(self):
+        
+            what = tamamodulemy.what
+            if what == "f":
+                self.feed(3)
+                self.gethungry()
+                return
+            elif what == "exit":
+                tamamodulemy.exitmsg()
+                return what
+            else:
+                exit()
+            
+            #self.gethungry()
 
     def feed(self, food=2):
         self.hunger -= food
-        print(":)")
+        print(":)", food)
+
     def gethungry(self):
-        self.hunger += 1
+        #x = 0
+        self.randomx()
+        if self.x == 2:
+            self.hunger += 1
+            print("getting hungrier =(")
+        print(f"mein Hunger : {self.hunger}")
 
-def innerloop():
-        step0 = time.time()
-        print("step0   ",step0)
-        step = step0
-        
-        return step
-
-def timeloop(step):
-    timegone = 0
-    start0 = time.time()
-    print(start0)
-    start = start0
-    print("start  ",start)
-    start0 = 0
-    print(start0)
-    step = innerloop()
-    print("step",step)
+    def randomx(self):
+        x = random.randint(1,10)
+        print("x in randomx",x)
+        self.x = x
+        #return x
     
+    #question()
 
-    if step - start > 5:
-        print("5 seconds gone")
-        timegone += (step - start)
-        print(f"time gone {timegone}")
-    elif timegone > 20:
-        return print(f"time gone {timegone}")
-    timegone += (step - start)
-    print(f"time gone {timegone}")
-
-timeloop(0)
-time1 = time.time()+2
-print("time : ", time1 , time.time())
-if time.time() == time1:
-    print("time2 : ",time.time())
-
-
-#  time.sleep(secs)
-
-#     Suspend execution of the calling thread for the given number of seconds. The argument may be a floating-point number to indicate a more precise sleep time.
+tama1 = tama("gochi")
+tama1.lifeloop()
