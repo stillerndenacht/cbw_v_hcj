@@ -1,13 +1,18 @@
-autos_ps = {"VW Golf":85, "Ford Mustang": 450, "BMW M3": 425, "Audi A7": 500}
-print(autos_ps)
- 
-matts_tuning_werkstatt = list(map(lambda b: b * 1.2, autos_ps.values()))
-print(matts_tuning_werkstatt)
-matts_tuning_werkstatt1 = list(map(lambda b: (b[0], b[1] * 1.2), autos_ps.items()))
-print(matts_tuning_werkstatt1)
+a, b, c = (1,2),(3,4),(5,6)
+print (a, b, c)
+a, b,c = a[0]+c[1], b[0]+b[1],c[0]+a[1]
+print (a, b, c)
 
-matts_tuning_werkstatt2 = dict(map(lambda b: (b[0], b[1] * 1.2), autos_ps.items()))
-print(matts_tuning_werkstatt2)
+a = 1/10
+b = 0.1
+print(a, b)
+print(a == b)
+print(repr(a), repr(b))
+print(a*100, b*100)
+print(a+a+a+a+a == b+b+b+b+b)
+print(a.hex(), b.hex())
 
-matts_tuning_werkstatt2 = dict(for x,y in enumerate(autos_ps.items()): x, y*1.2)
-print(matts_tuning_werkstatt2)
+a = 'Marvin\'s weed\'s name\'s "La Sage"'
+b = "Marvin's weed's name's \"La Sage\" "
+print(a)
+print(b)

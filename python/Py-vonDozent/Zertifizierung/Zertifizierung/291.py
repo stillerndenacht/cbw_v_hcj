@@ -7,6 +7,8 @@
 # C. ch = input(s, 1)
 # D. ch = s.read(1)
 
+# Lösung: D 
+
 f = open('test.txt') # w ist ein der Modi, um eine Datei zu öffnen
 # Zu welchem Zweck soll die Datei geöffnet werden? 
 # HalloDies isteine mehrzeiligeDatei

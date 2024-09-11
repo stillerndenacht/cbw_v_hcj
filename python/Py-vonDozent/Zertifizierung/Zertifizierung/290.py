@@ -6,6 +6,8 @@
 # C. s.writeln("Hello")
 # D. s.writeline("Hello")
 
+# Lösung: A
+
 f = open('test.txt', 'w') # w ist ein der Modi, um eine Datei zu öffnen
 # Zu welchem Zweck soll die Datei geöffnet werden? 
 f.write("Hallo")
