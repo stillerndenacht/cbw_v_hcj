@@ -4,6 +4,9 @@ class Super:
     def make(self):
         return 0
     def doit(self):
+        # self ist weiterhin vom Tyo Sub_A oder Sub_B
+        # für a wird Sub_A make aufgerufen
+        # für b make in der Klasse Super, weil kein  make in Sub_B implementiert ist. 
         return self.make()
 
 class Sub_A(Super):

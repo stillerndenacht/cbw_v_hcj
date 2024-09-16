@@ -26,40 +26,53 @@ print(b)
 # C. the class component has to be a class variable
 # D. the class component has to be a method
 
-
-class Auto:
-    def __init__(self, bezeichnung, ps):
-        self.__bezeichnung = bezeichnung  # "private" Instanzvariable
-        self.__ps = ps
-
-    def setPS(self, ps):
-        if ps > 0:
-            self.__ps = ps
-
-    def show_bezeichnung(self, __bezeichnung):
-        self.__bezeichnung = __bezeichnung
-        print("show bezeichnung", self.__bezeichnung)
-        print("show2 bezeichnung", self.__bezeichnung)
-        #print("show bezeichnung", self.hupe)  # hupe wurde außen definiert
-        # und gehört nicht zum Standard der Klasse
-        # von innerhalb der Klasse kann ich nicht auf den in Zeile
-        # 27 gesetzten Wert zugreifen, weil wir hier __bezeichnung in der Klasse
-        # definiert haben.
+# data = {1:0, 2:1, 3:2, 0:1}
+# # x = 0
+# # for _ in range(len (data)):
+# #     print(_ ,"x in : ", x, data)
+# #     x = data[x]
+# #     print(_,"x out : ", x, data)
 
 
-a = Auto("BMW Test", 150)
-#a.show_bezeichnung()
-a.__bezeichnung = "BMW"  # eine neue Instanzvariable NUR FÜR a anlegen
-a.hupe = "MIIIEEEP"
-a.show_bezeichnung(a.__bezeichnung)
+# # print(x)
+# print(data[0], data[1],data[2], data[3])
 
-print(dir(a))
+# class Class:
+#     __Var = 0  
+#     def foo(self):
+#         Class._Class__Var += 1
+#         self.__prop = Class.__Var
 
-# a._Auto__ps = -10 # Setzen eines nicht plausiblen Wertes.
-a.setPS(-10)  # saubere Lösung
-print(a._Auto__ps)
+# o1 = Class()
+# o1.foo() 
+# o2 = Class()
+# o2.foo()
 
-# print(a._Auto__bezeichnung) # name mangling (Verschleierung des Namens)
-#print(type(a._bezeichnung2))
-# valide, aber nicht empfehlenswert :-)
-# print(a.__bezeichnung) # _Auto__bezeichnung # Zugriff nicht möglich
+
+# print(o2._Class__Var + o1._Class__prop)
+
+# a =[0]
+# b = a[:]
+# a[0]=1
+
+# a[0]-1 == b[0]
+
+x = "Peter"
+y = "Peter"
+z = x is y
+print(z)
+
+class test:
+    def __init__(self):
+        pass
+    def a(self,b=0):
+        if b == 1:
+            print("aus a1")
+        
+    def a(self,d=0):
+        if d == 2:
+            print("aus a2")
+        
+a = test()
+a.a(1)
+#a.a(2)
