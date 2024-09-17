@@ -1,3 +1,6 @@
+import math
+
+
 a, b, c = (1, 2), (3, 4), (5, 6)
 print(a, b, c)
 a, b, c = a[0] + c[1], b[0] + b[1], c[0] + a[1]
@@ -62,17 +65,25 @@ y = "Peter"
 z = x is y
 print(z)
 
-class test:
-    def __init__(self):
-        pass
-    def a(self,b=0):
-        if b == 1:
-            print("aus a1")
+# # Funktionen mit gleichem Namen überschreiben sich
+# class test:
+#     def __init__(self):
+#         pass
+#     def a(self,b=0):
+#         if b == 1:
+#             print("aus a1")
         
-    def a(self,d=0):
-        if d == 2:
-            print("aus a2")
+#     def a(self,d=0):
+#         if d == 2:
+#             print("aus a2")
         
-a = test()
-a.a(1)
-#a.a(2)
+# a = test()
+# a.a(1)
+# #a.a(2)
+
+#print(math.ceil(-1.1))
+#print(math.factorial(3))
+print(math.hypot(2,2,2))
+print(math.hypot(2,2))
+print(math.hypot(2,2,2,2))
+########## bis 15
