@@ -2,7 +2,7 @@
 # jede Zugriffsart muss man extra initialisieren :(
 filex = open("python/filehandling/testfile.txt", "w")
 filex.write("Ich existiere!")
-#filex.close()
+filex.close()
 # öffnen zum Lesen - Lesen im Textmode ist default "rt"
 filex = open("python/filehandling/testfile.txt") #
 #print(filex.read()) 
@@ -24,3 +24,17 @@ print(filex.readline())
 print(filex.readline())
 print(filex.readline())
 print(filex.readline())
+
+filex.close()
+
+# öffnen mit with  und as
+file_test = "python/filehandling/testfile.txt"
+
+with open(file_test, "r+") as datei:
+    print(datei.read())
+
+# File wird automatisch geschlossen
+
+# readlines gibt eine Liste der Zeilen aus
+filex = open("python/filehandling/testfile.txt", "rt")
+print(filex.readlines())

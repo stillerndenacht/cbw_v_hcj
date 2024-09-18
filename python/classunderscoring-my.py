@@ -1,7 +1,8 @@
 class Auto:
-    def __init__(self, bezeichnung, ps):
+    def __init__(self, bezeichnung, ps, kw=5):
         self.__bezeichnung = bezeichnung  # "private" Instanzvariable
         self.__ps = ps
+        self._kw = kw # ist zwar nicht private, aber muss trotzdem mit Underscore aufgerufen werden
 
     def setPS(self, ps):
         if ps > 0:
@@ -31,5 +32,7 @@ a.show_bezeichnung2(a.__bezeichnung) # hier wird das neue __bezeichnung übergeb
 
 a.__bezeichnung__ = "BMW show3"
 a.show_bezeichnung3()
+
+print(a._kw)
 
 print(dir(a))
