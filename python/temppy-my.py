@@ -179,15 +179,20 @@ import random
 #     f() # 
 
 # 47
-class Spam(Exception):
-    pass
-class Ham(Spam):
-    pass
-for cls in [Spam, Ham]:
-    try:
-        #print(type(cls()))
-        raise cls()
-    except Spam:
-        print("Spam", end=" ")
-    except Ham:
-        print("Ham", end=" ")
+# class Spam(Exception):
+#     pass
+# class Ham(Spam):
+#     pass
+# for cls in [Spam, Ham]:
+#     try:
+#         #print(type(cls()))
+#         raise cls()
+#     except Spam:
+#         print("Spam", end=" ")
+#     except Ham:
+#         print("Ham", end=" ")
+print(sorted("python"))
+#print(ord(""))
+fruits = ["apple", "banana", "cherry"]
+print(fruits[-2])
+def
