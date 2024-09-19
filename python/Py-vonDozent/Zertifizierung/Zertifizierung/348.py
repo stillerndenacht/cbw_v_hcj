@@ -11,13 +11,27 @@ class C(A):
 class D(B):
     pass
 
+# Lösung: AD
+
 # A: Formell muss die spezfiischere Klasse zuerst bei der Vererbung stehen.
 # Sonst wäre es so, als wenn man priorität von seinen Großeltern erben wollen würde
 # => systemisch sinnlos.
 # Methoden und Eigenschaften A sind, sofern nicht überschrieben, sowieso direkt über 
 # D verfügbar. Spezifisch kann man eine Methode aus A auch aufrufen 
-# A. class Class_4(D, A):
-# pass
+# A. 
+class Class_4(D, A):
+    pass
+
+print(Class_4.__mro__)
+
+class Class_1(C, D):
+    pass
+
+print(Class_1.__mro__)
+
+print(help(D))
+print(help(Class_1 ))
+
 # B. class Class_3(A, C):
 # pass
 # C. class Class_2(B, D):
