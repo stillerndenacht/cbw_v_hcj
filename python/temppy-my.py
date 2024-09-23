@@ -195,4 +195,9 @@ print(sorted("python"))
 #print(ord(""))
 fruits = ["apple", "banana", "cherry"]
 print(fruits[-2])
-def
+
+
+my_list = [i for i in range(5)]
+m = [my_list[i] for i in range(4, 0, -1) if my_list[i] % 2 != 0]
+print(m)
+
