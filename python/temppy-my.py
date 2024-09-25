@@ -191,13 +191,15 @@ import random
 #         print("Spam", end=" ")
 #     except Ham:
 #         print("Ham", end=" ")
-print(sorted("python"))
-#print(ord(""))
-fruits = ["apple", "banana", "cherry"]
-print(fruits[-2])
+# print(sorted("python"))
+# #print(ord(""))
+# fruits = ["apple", "banana", "cherry"]
+# print(fruits[-2])
 
 
-my_list = [i for i in range(5)]
-m = [my_list[i] for i in range(4, 0, -1) if my_list[i] % 2 != 0]
-print(m)
+# my_list = [i for i in range(5)]
+# m = [my_list[i] for i in range(4, 0, -1) if my_list[i] % 2 != 0]
+# print(m)
 
+print(random.choice({1:"spam", 2:"ham", 0:"eggs"}))
+print(random.sample(["spam", "ham", "eggs"], k = 0))

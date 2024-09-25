@@ -11,6 +11,9 @@ public class Test {
          * oder als Mehrzeiler ...
          * ... über mehrere Zeilen
          */
+
+         /** und das ist ein javadoc Kommentar, 
+          * der über das javadoc-Tool ausgelesen werden kann */
         // Natürlich kann man auch Variablen anlegen
         String first = "erste Variable";
         int second = 2;
