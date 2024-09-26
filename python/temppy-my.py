@@ -191,8 +191,117 @@ import random
 #         print("Spam", end=" ")
 #     except Ham:
 #         print("Ham", end=" ")
-print(sorted("python"))
-#print(ord(""))
-fruits = ["apple", "banana", "cherry"]
-print(fruits[-2])
-def
+# print(sorted("python"))
+# #print(ord(""))
+# fruits = ["apple", "banana", "cherry"]
+# print(fruits[-2])
+
+
+# my_list = [i for i in range(5)]
+# m = [my_list[i] for i in range(4, 0, -1) if my_list[i] % 2 != 0]
+# print(m)
+
+print(random.choice({1:"spam", 2:"ham", 0:"eggs"}))
+print(random.sample(["spam", "ham", "eggs"], k = 0))
+
+def f(n):
+    for i in range(1, n+1):
+        print("i",i)
+        yield i
+for i in f(2):
+    print(i, end=" ")
+
+print("\n--------next-----------\n")
+
+class Class:
+    Variable = 0
+    def __init__(self):
+        self.value = 0
+
+object_1 = Class()
+# print(object_1.__dict__)
+object_1.Variable = 1
+
+object_2 = Class()
+object_2.value +=1
+#print(object_1.__dict__)
+#print(object_2.__dict__)
+#print(object_2.Variable)
+print(object_2.Variable + object_1.value)
+
+print("\n--------next-----------\n")
+
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+    def add_value(self, x):
+        self.value += x
+
+a = MyClass(5)
+b = a 
+b.add_value(10)
+# a.add_value(2)
+# print(id(a.add_value))
+# print(id(b.add_value))
+print(a.value + b.value)
+
+print("\n--------next-----------\n")
+    
+my_string = "Lernen für das Zertifikat ist öde"
+print(my_string[1:32:11].count("a"))
+print(my_string[1:32:11])
+
+print("\n--------next-----------\n")
+
+class MyClass:
+    def __init__(self):
+        self.__value = 100
+
+obj = MyClass()
+print(hasattr(obj, "_MyClass__value"))
+print(obj._MyClass__value)
+#print(obj._self__value)
+
+print("\n--------next-----------\n")
+
+def countdown(n):
+    while n > 0:
+        #print(n)
+        yield n
+        n-= 1
+
+for x in countdown(3):
+    print(x, end=" ")
+
+print("\n--------next-----------\n")
+
+class A:
+    __VarA = 1
+    def get(self):
+        return self.__VarA
+class B(A):
+    __VarA = 2
+    def get(self):
+        return self.__VarA
+class C(B):
+    __VarA = 3 # weil diese VarA private ist kann man aus dem get von B nicht darauf zugreifen
+
+obj_a = A()
+obj_b = B()
+obj_c = C()
+
+print(isinstance(obj_b, C))
+print(C._C__VarA == 2)
+print(hasattr(B, "get"))
+print(obj_c.get()==2)
+
+print("\n--------next-----------\n")
+
+class MyClass:    
+    pass
+obj = MyClass()
+print(hasattr(obj, '__name__'))
+print(hasattr(obj, '__module__'))
+print(hasattr(obj, '__bases__'))
+print(hasattr(MyClass, '__name__'))
+
