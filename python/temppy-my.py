@@ -305,3 +305,17 @@ print(hasattr(obj, '__module__'))
 print(hasattr(obj, '__bases__'))
 print(hasattr(MyClass, '__name__'))
 
+print("\n--------next-----------\n")
+
+def f(n):
+    for i in range(1, n+1):
+        yield i
+f = f(3)
+print(next(f))
+print(next(f))
+
+
+print("\n--------next-----------\n")
+
+x = eval('22+5+int("3")')
+print(x)
