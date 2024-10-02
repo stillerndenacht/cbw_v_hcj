@@ -1,19 +1,41 @@
 package de.montag1;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ScannerThings {
-public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Beliebige Eingabe : ");
-    String scan1 = "0";
-    scan1 = scanner.next();
-    String scan2 = "0";
-    scan2 = scanner.next();
-    String scan3 = "0";
-    scan3 = scanner.next();
-    String scan4 = "0";
-    scan4 = if scanner.next(): scanner.next();
-    System.out.printf("Ihre Eingabe %s, %s, %s, %s", scan1, scan2, scan3, scan4);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Beliebige Eingabe : ");
+
+        ArrayList<String> scanArray = new ArrayList<>();
+
+        int a = 1;
+        String scannext;
+
+        while (true) {
+            System.out.println(scanner.hasNext());
+            scannext = scanner.next();
+            System.out.println("a" + a + scannext);
+            if ("c".equals(scannext)) {
+                break;
+            } else {
+
+                a++;
+                //scannext = scanner.next();
+                scanArray.add(scannext);
+
+                System.out.println(scanArray);
+
+                System.out.println("end loop" + a);
+                if ((scanner.hasNext() != true)) {
+                    a = 0;
+                
+                }
+
+            }
+        }
+        System.out.println("End");
+    }
 }
-}
+//https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
