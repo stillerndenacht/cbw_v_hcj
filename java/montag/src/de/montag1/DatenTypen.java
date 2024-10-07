@@ -59,10 +59,11 @@ public class DatenTypen {
         // Narrowing geht nur explizit
         int i2 = (int) l1;
         System.out.println("\n--------------\n");
-        System.out.println("char kann sowohl als Zeichen als auch als Codepoint angegeben werden");
+        System.out.println("char kann sowohl als Zeichen als auch als Codepoint (oder Unicode) angegeben werden");
         char aa = 'A';
         char aaa = 65;
-        System.out.println("char aa : " + aa + "\nchar aaa :" + aaa);
+        char a3 = '\u0041';
+        System.out.println("char aa : " + aa + "\nchar aaa :" + aaa + "\nchar a3 :" + a3);
         System.out.println("\n--------------\n");
 
         // nicht-primitive DatenTypen
