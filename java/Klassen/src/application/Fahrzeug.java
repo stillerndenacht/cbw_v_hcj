@@ -3,10 +3,17 @@ package application;
 import static java.lang.Math.abs;
 
 public class Fahrzeug {
+
     private String hersteller = "None";
     private int ps = 0;
     private String farbe = "None";
     private int anzahlSitze = 0;
+    // neue Attribute ----------
+    private double verbrauch100 = 0.0;
+    private double maxTank = 0.0;
+    private double aktTank = 0.0;
+    private double kmTag = 0.0;
+    private double kmGesamt = 0.0;
 
     public Fahrzeug() {
         this("Ford", 20, "Black", 4);
@@ -63,8 +70,49 @@ public class Fahrzeug {
         this.anzahlSitze = anzahlSitze;
     }
 
-    public void print(){
+    public void print() {
         System.out.printf("Hersteller : %20s%nPS : %20d%nFarbe : %20s%nAnzahl Sitze : %20d%n", this.hersteller, this.ps, this.farbe, this.anzahlSitze);
+    }
+
+    // neue Methoden ----------
+    public double getVerbrauch100() {
+        return this.verbrauch100;
+    }
+
+    public void setVerbrauch100(double verbrauch100) {
+        this.verbrauch100 = verbrauch100;
+    }
+
+    public double getMaxTank() {
+        return this.maxTank;
+    }
+
+    public void setMaxTank(double maxTank) {
+        this.maxTank = maxTank;
+    }
+
+    public double getAktTank() {
+        return this.aktTank;
+    }
+
+    public void setAktTank(double aktTank) {
+        this.aktTank = aktTank;
+    }
+
+    public double getKmTag() {
+        return this.kmTag;
+    }
+
+    public void setKmTag(double kmTag) {
+        this.kmTag = kmTag;
+    }
+
+    public double getKmGesamt() {
+        return this.kmGesamt;
+    }
+
+    public void setKmGesamt(double kmGesamt) {
+        this.kmGesamt = kmGesamt;
     }
 
 }
