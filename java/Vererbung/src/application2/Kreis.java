@@ -70,12 +70,13 @@ public class Kreis extends GrafikObjekt {
         }
     }
 
-    public void print_K() {
-        this.print();
+    @Override // @Override initialisiert einen Kontrollmechanismus des Compilers, der prüft ob die Methode der Basisklasse korrekt überschrieben wird
+    public void print() {
+        super.print();
         System.out.printf("wert : %.2f%n", this.wert);
         System.out.printf("Radius : %.2f%n", this.radius);
         System.out.printf("Umfang : %.2f%n", this.umfang);
-        System.out.printf("Fuellfarbe : %f%n", this.fuellfarbe);
+        System.out.printf("Fuellfarbe : %s%n", this.fuellfarbe.toString());
 
     }
 

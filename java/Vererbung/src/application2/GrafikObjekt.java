@@ -45,7 +45,7 @@ public class GrafikObjekt {
     public void print(){
         System.out.printf("Position X : %d%n",posX);
         System.out.printf("Position Y : %d%n",posY);
-        System.out.printf("Linienfarbe : %d%n", linienFarbe);
+        System.out.printf("Linienfarbe : %s%n%n", linienFarbe.toString());
     }
 
 }

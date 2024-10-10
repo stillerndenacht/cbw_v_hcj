@@ -4,6 +4,7 @@ import static java.lang.Math.abs;
 
 public class Fahrzeug {
 
+    private String className = "Fahrzeug";
     private String hersteller = "None";
     private int ps = 0;
     private String farbe = "None";
@@ -14,12 +15,13 @@ public class Fahrzeug {
     private double aktTank = 0.0;
     private double kmTag = 0.0;
     private double kmGesamt = 0.0;
-
+// der Standard Construktor ist nötig damit die Vererbung nach unten richtig funktioniert, wenn man dort keine Construktoren einbaut
     public Fahrzeug() {
         this("Ford", 20, "Black", 4);
     }
 
     public Fahrzeug(String hersteller, int ps, String farbe, int anzahlSitze) {
+
         this.hersteller = hersteller;
         this.ps = ps;
         this.farbe = farbe;
@@ -71,7 +73,13 @@ public class Fahrzeug {
     }
 
     public void print() {
-        System.out.printf("Hersteller : %20s%nPS : %20d%nFarbe : %20s%nAnzahl Sitze : %20d%n", this.hersteller, this.ps, this.farbe, this.anzahlSitze);
+        // System.out.printf("%nKlasse: %20s%nHersteller : %20s%nPS : %20d%nFarbe :
+        // %20s%nAnzahl Sitze : %20d%n",
+        // this.className, this.hersteller, this.ps, this.farbe, this.anzahlSitze);
+        System.out.printf("%nKlasse :       %20s", this.className);
+        System.out.printf("%nHersteller :   %20s", this.hersteller);
+        System.out.printf("%nFarbe :        %20s", this.farbe);
+        System.out.printf("%nAnzahl Sitze : %20d", this.anzahlSitze);
     }
 
     // neue Methoden ----------
@@ -113,6 +121,36 @@ public class Fahrzeug {
 
     public void setKmGesamt(double kmGesamt) {
         this.kmGesamt = kmGesamt;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    // ----------- Methoden Bewegung etc ----------
+    public void fahren(double kmFahrt) {
+        double verbrauch = this.verbrauch100 * kmFahrt;
+        this.aktTank -= verbrauch;
+        double restKm = this.aktTank * this.verbrauch100;
+        if (this.aktTank < 0) {
+            System.out.printf("Sie mussen mindestens %.2f Liter tanken, um ihr Ziel zu erreichen.", abs(this.aktTank));
+        } else {
+            System.out.printf("Sie können nach Ankunft mit %.2f Litern im Tank noch %.2f km fahren", this.aktTank,
+                    restKm);
+        }
+    }
+
+    public void setVerbrauswerte(
+            double verbrauch100,
+            double maxTank,
+            double aktTank) {
+        setVerbrauch100(verbrauch100);
+        setMaxTank(maxTank);
+        setAktTank(aktTank);
     }
 
 }
