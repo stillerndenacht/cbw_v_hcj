@@ -6,7 +6,14 @@ public class Rechteck {
     private String rahmenfarbe = "Schwarz";
     private String fuellfarbe = "Weiß";
 
-    // public Rechteck(){} --- das wäre der default-Construktor, er ist leer
+    // --- static ist eine Klassenvariable ---
+    private static int anzahlRechtecke;
+    // ---- statischer also Klassen Initialisierungsblock ---
+    static {
+        System.out.println("Klasse geladen...");
+    }
+
+    // public Rechteck(){} --- das wäre der Standard-Construktor, er ist leer oder wie hier mit default-Werten gefüllt
     public Rechteck() {
         this(10, 10.0, "Grün", "Rot");
     }
@@ -21,6 +28,15 @@ public class Rechteck {
         setBreite(breite);
         this.rahmenfarbe = rahmenfarbe;
         this.fuellfarbe = fuellfarbe;
+        ++anzahlRechtecke; // --- hier wird die Klassenvariable hochgezählt
+    }
+
+    // für den Zugriff auf die Klassenvariable braucht es eine Klassenmethode
+    // sie muss auch in Start mit Klassenname abgefragt werden (geht aber auch mit
+    // Objektname)
+    // Klassenmethoden können nur auf Klassenvariablen zugreifen!
+    public static int getAnzahlRechtecke() {
+        return anzahlRechtecke;
     }
 
     public double getBreite() {
@@ -67,5 +83,8 @@ public class Rechteck {
         System.out.printf("Länge: %12.2f%nBreite: %12.2f%nRahmenfarbe: %12s%nFuellfarbe: %12s%n", laenge, breite,
                 rahmenfarbe, fuellfarbe);
     }
-
+// eine automatische Methode die wieder runterzählt, wenn Objekte entfernt werden
+    protected void finalize() {
+        --anzahlRechtecke;
+    }
 }

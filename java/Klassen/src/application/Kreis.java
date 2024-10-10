@@ -8,17 +8,30 @@ public class Kreis {
     private String rahmenfarbe = "None";
     private String fuellfarbe = "None";
 
+    // Klassenvariable für den Kreis...
+    private static int kreisZaehler;
+// Klassenmethode für den Kreis ...
+    public static int getKreisZaehler(){
+        return kreisZaehler;
+    }
+    // eine automatische Methode die wieder runterzählt, wenn Objekte entfernt werden, falls der Garbage Collector mal Platz braucht
+    protected void finalize() {
+        --kreisZaehler;
+    }
+
     public Kreis() {
         this(
                 0.0, 0.0, "White", "White");
     }
 
     public Kreis(double radius) {
+        ++kreisZaehler;
         setRadius(radius);
 
     }
 
     public Kreis(double radius, double umfang, String rahmenfarbe, String fuellfarbe) {
+        ++kreisZaehler;
         setRadius(radius);
 
     }
