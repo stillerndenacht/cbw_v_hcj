@@ -13,7 +13,7 @@ public class Rechteck {
 	
 	public Rechteck() {
 		this(1.0, 1.0, "Rot", "Gruen");
-		
+		System.out.println("Standardkonstruktor");
 	}
 	
 	public Rechteck(double laenge, double breite) {

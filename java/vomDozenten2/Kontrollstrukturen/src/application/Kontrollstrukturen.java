@@ -78,6 +78,8 @@ public class Kontrollstrukturen {
 		
 		}
 	
+	
+	
 	double erg = 5.9 % 2.7;
 	
 	System.out.println(erg);
@@ -95,7 +97,14 @@ public class Kontrollstrukturen {
 
 int h = 10;
 //System.out.println( h<20 ? out1() : out2() );
+	if(z < erg) 
+			System.out.println(z < erg);
+			System.out.println("Hallo");
 
+			
+			for(int index = 0; index < 3; ++index)
+				System.out.println(index);
+				System.out.println("jaskdsakjd");
 	}
 
 	public static void out1() {}

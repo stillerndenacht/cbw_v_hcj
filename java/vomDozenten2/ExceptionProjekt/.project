@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Arrays</name>
+	<name>ExceptionProjekt</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,7 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1729072752128</id>
+			<id>1729072752189</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
