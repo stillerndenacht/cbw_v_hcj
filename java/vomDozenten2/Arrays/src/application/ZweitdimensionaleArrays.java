@@ -48,6 +48,8 @@ public class ZweitdimensionaleArrays {
 			}
 		}
 		
+		
+		
 		for(int[] zeile  : array1) {
 			for(int zahl : zeile) {
 				System.out.print(zahl + "\t");
@@ -58,7 +60,7 @@ public class ZweitdimensionaleArrays {
 		int[][] array8 = {{2, 5, 7, 6, 9}, {1, 8, 4}, {45, 78}, {23}};		
 		int[][][] array9 = {{{2, 5, 7, 6, 9}, {1, 8, 4}}, {{45, 78}, {23}}};	
 		
-		System.out.println(array9[1][2][1]);
+//		System.out.println(array9[1][2][1]);
 	}
 
 }

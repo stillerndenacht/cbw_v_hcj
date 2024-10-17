@@ -1,5 +1,7 @@
 package application;
 
+import java.util.Objects;
+
 public class Rechteck {
 	private double laenge = 45;
 	private double breite;
@@ -11,7 +13,7 @@ public class Rechteck {
 	
 	public Rechteck() {
 		this(1.0, 1.0, "Rot", "Gruen");
-		System.out.println("Standardkonstruktor");
+		
 	}
 	
 	public Rechteck(double laenge, double breite) {
@@ -90,4 +92,26 @@ public class Rechteck {
 	protected void finalize() {
 		--anzahlRechtecke;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(breite, fuellfarbe, laenge, rahmenfarbe);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Rechteck other = (Rechteck) obj;
+		return Double.doubleToLongBits(breite) == Double.doubleToLongBits(other.breite)
+				&& Objects.equals(fuellfarbe, other.fuellfarbe)
+				&& Double.doubleToLongBits(laenge) == Double.doubleToLongBits(other.laenge)
+				&& Objects.equals(rahmenfarbe, other.rahmenfarbe);
+	}
+	
+	
 }

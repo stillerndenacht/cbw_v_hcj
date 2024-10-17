@@ -13,7 +13,10 @@ public class ArrayTest {
 		
 		for(int zahl : intArray1) {
 			System.out.println(zahl);
+			zahl = 10;
 		}
+		
+		System.out.println("intArray1[intArray1.length]: " + intArray1[intArray1.length]);
 		
 		for(int index = 0; index < intArray1.length; ++index) {
 			intArray1[index] = (int) (Math.random() * 100) + 1;
