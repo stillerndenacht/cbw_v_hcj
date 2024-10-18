@@ -1,6 +1,8 @@
+//  um weiter zu laufen, jeweils die Fehler (unhandled Exceptions) werfenden Zeilen auskommentieren
 package minimals.exceptionthings;
 
 public class exceptionThings {
+
     public static void main(String[] args) {
         System.out.println("\n----- Division by zero ------\n");
         int zahl1 = 5, zahl2 = 0, zahl3 = 50, erg = 0;
@@ -25,36 +27,36 @@ public class exceptionThings {
         System.out.println("Endergebnis egal ob Fehler :" + erg);
 
         // ---------------------------------------------------------------------------
-
         System.out.println("\n----- Index out of Bounds ------\n");
 
-        String[] fehler = { "Das", "war", "kein", "Fehler" };
+        String[] fehler = {"Das", "war", "kein", "Fehler"};
         try {
             System.out.println(fehler[4]);
         } catch (ArrayIndexOutOfBoundsException iooB) {
             System.out.println("Da war wohl der Index falsch..");
-            System.out.println(iooB.getLocalizedMessage());
+            System.out.println(iooB.getMessage());
         }
         // finally muss nicht sein
 
         // ---------------------------------------------------------------------------
-
         System.out.println("\n----- Division by zero nochmal spezifischer------\n");
         try {
             erg = zahl3 / zahl2;
         } catch (ArithmeticException e) {
             System.out.println("das kommt nur bei Arithmetic Exceptions vor..  " + e.getMessage());
+            System.out.println(e.toString());
         }
         System.out.println("Endergebnis außerhalb try catch :" + erg);
 
+        // ---------------------------------------------------------------------------
         System.out.println("\n----- es geht auch ohne catch nur mit finally------\n");
-        // try {
-        //     System.out.println(fehler[4]);
-        // } finally {
-        //     System.out.println("---Fehler?? mir doch egal! ");
-        // }
-        // System.out.println(
-        //         "aber dann bricht die Ausführung ab und das hier kommt nicht... nur das finally und die unhandeled Exception..");
+        try {
+            // System.out.println(fehler[4]); // einkommentiert ergibt das eine unhandled Exception, weil kein catch sie abfängt
+        } finally {
+            System.out.println("---Fehler?? mir doch egal! ");
+        }
+        System.out.println(
+                "aber dann bricht die Ausführung ab und das hier kommt nicht... nur das finally und die unhandled Exception..");
 
         // ---------------------------------------------------------------------------
         System.out.println("\n----- NullPointerException------\n");
@@ -63,13 +65,15 @@ public class exceptionThings {
         ExceptObjekt exobjekt2 = new ExceptObjekt();
 
         try {
-            exobjekt.print();
+            exobjekt.print(); // einkommentiert wirft das den Fehler
             exobjekt2.print();
         } catch (NullPointerException e) {
             System.out.println("Da war wohl kein Objekt");
             System.out.println(e.getMessage());
             e.printStackTrace();
+            System.out.println("e.toString() : " + e.toString());
         }
+        System.out.println("_____Ende der Datei______");
 
     }
 

@@ -1,23 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
+// Start ist mit exceptionThingsforObj
 package minimals.exceptionthings;
 
 class MyOwnChildException extends IllegalArgumentException {
-    private int zeile;
+
+    private String zeile;
     private String method;
     private int fehlerCode;
 
-    public MyOwnChildException(String s) {
+    public MyOwnChildException(String s, String zeile, String method, int fehlerCode) {
         super(s);
         this.zeile = zeile;
         this.method = method;
         this.fehlerCode = fehlerCode;
     }
 
-    public int getZeile() {
+    public String getZeile() {
+
+        for (StackTraceElement i : super.getStackTrace()) {
+            zeile += i.toString() + "\n";
+        }
+
+        //zeile = super.getStackTrace()[0].toString();
         return zeile;
     }
 
@@ -31,7 +34,9 @@ class MyOwnChildException extends IllegalArgumentException {
 
     @Override
     public String getMessage() {
-        return "Fehler in " + method + "Zeile" + zeile + "Fehlercode" + fehlerCode + "\n" + super.getMessage();
+        return "\nFehler in : " + method + "\nZeilen : " + getZeile() + "Fehlercode :" + fehlerCode + "\nsuper.getMessage :\n" + super.getMessage();
+        // return super.toString();
+
     }
 
 }

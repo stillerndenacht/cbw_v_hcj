@@ -1,8 +1,10 @@
+// Start ist mit exceptionThingsforObj
 package minimals.exceptionthings;
 
 import java.util.Objects;
 
 public class ExceptObjekt {
+
     private double eins = 0;
     protected double zwei = 0;
     private String name = "noname";
@@ -33,9 +35,11 @@ public class ExceptObjekt {
         return zwei;
     }
 // es ist ihm auch egal ob der geworfene Fehler irgendwas mit dem zu tun hat was passiert
+
     public void setZwei(double zwei) throws ArithmeticException {
         if (zwei < 0) {
-            throw new ArithmeticException("das ist absurd..." + zwei);            
+        
+            throw new ArithmeticException("das ist absurd..." + zwei);
         }
         this.zwei = zwei;
     }
@@ -62,12 +66,15 @@ public class ExceptObjekt {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         ExceptObjekt other = (ExceptObjekt) obj;
         return Double.doubleToLongBits(eins) == Double.doubleToLongBits(other.eins)
                 && Double.doubleToLongBits(zwei) == Double.doubleToLongBits(other.zwei)
