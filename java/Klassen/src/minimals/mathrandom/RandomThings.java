@@ -9,7 +9,7 @@ public class RandomThings {
         Random rand = new Random();
         int value;
         for (int i = 0; i < 10; ++i) {
-            value = rand.nextInt();
+            value = rand.nextInt(); // nextInt(10) - Bound 10 liefert Werte bis 9
             System.out.println(value);
         }
         System.out.println("\n ~ ~ ~~ ~~ ~~~  ~~~  ~~~  ~~~~   ~~~~\n");
