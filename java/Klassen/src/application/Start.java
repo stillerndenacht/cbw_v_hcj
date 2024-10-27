@@ -3,21 +3,21 @@ package application;
 public class Start {
     public static void main(String[] args) {
 
-        System.out.println("AnzahlRechtecke : " + Rechteck.getAnzahlRechtecke());
-        Rechteck r1;
-        r1 = new Rechteck();
+        System.out.println("AnzahlRechtecke : " + Rechteckmy.getAnzahlRechtecke());
+        Rechteckmy r1;
+        r1 = new Rechteckmy();
         r1.setBreite(12);
         r1.setLaenge(56);
 
-        System.out.println("AnzahlRechtecke : " + Rechteck.getAnzahlRechtecke());
+        System.out.println("AnzahlRechtecke : " + Rechteckmy.getAnzahlRechtecke());
         System.out.println("AnzahlRechtecke über r1 : " + r1.getAnzahlRechtecke());
 
         System.out.println(r1.getBreite());
         System.out.println(r1.getLaenge());
 
-        Rechteck r2 = new Rechteck();
+        Rechteckmy r2 = new Rechteckmy();
         r2.print();
-        System.out.println("AnzahlRechtecke : " + Rechteck.getAnzahlRechtecke());
+        System.out.println("AnzahlRechtecke : " + Rechteckmy.getAnzahlRechtecke());
 
         System.out.println("------Kreis k1-------");
         Kreis k1;
@@ -53,10 +53,10 @@ public class Start {
        System.out.println("--------Kreiskollaps Ende ------------");
         // ---- Löschen - r1 wird auf Null gesetzt, wodurch das Objekt zwar noch
         // existiert, aber nicht mehr referenziert wird.
-        System.out.println("AnzahlRechtecke VOR Löschen: " + Rechteck.getAnzahlRechtecke());
+        System.out.println("AnzahlRechtecke VOR Löschen: " + Rechteckmy.getAnzahlRechtecke());
         r1 = null;
         // Wirklich gelöscht wird es erst,
         // wenn der Garbage-Collector Platz braucht.
-        System.out.println("AnzahlRechtecke NACH Löschen : " + Rechteck.getAnzahlRechtecke());
+        System.out.println("AnzahlRechtecke NACH Löschen : " + Rechteckmy.getAnzahlRechtecke());
     }
 }

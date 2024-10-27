@@ -26,12 +26,12 @@ public class ArrayTest {
 			System.out.println(zahl);
 		}
 		
-		Rechteck[] rechtecke = new Rechteck[5];
+		Rechteckmy[] rechtecke = new Rechteckmy[5];
 		for(int index = 0; index < rechtecke.length; ++index) {
-			rechtecke[index] = new Rechteck(Math.random() * 200, Math.random() * 100);
+			rechtecke[index] = new Rechteckmy(Math.random() * 200, Math.random() * 100);
 		}
 		
-		for(Rechteck r : rechtecke) {
+		for(Rechteckmy r : rechtecke) {
 			System.out.println(r);
 		}
 		
@@ -46,13 +46,13 @@ public class ArrayTest {
 			System.out.print(z + "\t");
 		}
 		
-		Rechteck[] rechtecke2 = {new Rechteck(), new Rechteck(3, 7)};
-		Rechteck[] rechtecke3 = new Rechteck[] {new Rechteck(), new Rechteck(3, 7)};
-		for(Rechteck r : rechtecke2) {
+		Rechteckmy[] rechtecke2 = {new Rechteckmy(), new Rechteckmy(3, 7)};
+		Rechteckmy[] rechtecke3 = new Rechteckmy[] {new Rechteckmy(), new Rechteckmy(3, 7)};
+		for(Rechteckmy r : rechtecke2) {
 			System.out.println(r);
 		}
 		
-		for(Rechteck r : rechtecke3) {
+		for(Rechteckmy r : rechtecke3) {
 			System.out.println(r);
 		}
 	}
