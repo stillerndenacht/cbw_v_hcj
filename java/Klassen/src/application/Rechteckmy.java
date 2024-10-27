@@ -1,6 +1,6 @@
 package application;
 
-public class Rechteck {
+public class Rechteckmy {
     private double laenge = 0;
     private double breite = 0;
     private String rahmenfarbe = "Schwarz";
@@ -14,16 +14,16 @@ public class Rechteck {
     }
 
     // public Rechteck(){} --- das wäre der Standard-Construktor, er ist leer oder wie hier mit default-Werten gefüllt
-    public Rechteck() {
+    public Rechteckmy() {
         this(10, 10.0, "Grün", "Rot");
     }
 
-    public Rechteck(double laenge, double breite) {
+    public Rechteckmy(double laenge, double breite) {
         setLaenge(laenge);
         setBreite(breite);
     }
 
-    public Rechteck(double laenge, double breite, String rahmenfarbe, String fuellfarbe) {
+    public Rechteckmy(double laenge, double breite, String rahmenfarbe, String fuellfarbe) {
         setLaenge(laenge);
         setBreite(breite);
         this.rahmenfarbe = rahmenfarbe;
