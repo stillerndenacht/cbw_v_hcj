@@ -14,6 +14,7 @@ public class ThreadUhr extends Thread {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss:ms");
         String name = Thread.currentThread().getName();
         Long id = Thread.currentThread().getId();
+        //Long id = Thread.currentThread().threadId();
 
         while (running) {
             time = LocalTime.now();

@@ -11,6 +11,8 @@ public class ThreadThings2 {
         uhr2.setDaemon(true);
         uhr3.setDaemon(true);
 
+        //uhr1.setPriority(10);
+
         //uhr1.setName("ThreadUhr"); //setzt den Name der bei getName() ausgegeben wird Default wäre er bspw. Thread-0
         uhr1.start(); // .start() ist die Methode die von java.Thread geerbt wird um den Thread zu starten
         uhr2.start();
