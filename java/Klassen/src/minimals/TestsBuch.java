@@ -1,5 +1,7 @@
 package minimals;
 
+import java.util.ArrayList;
+
 public class TestsBuch {
 
     public static void main(String[] args) {
@@ -70,7 +72,7 @@ public class TestsBuch {
         System.out.println("integer == integer2 : " + (integer == integer2)); // true
         System.out.println("dou == dou2 : " + (dou == dou2)); // true
         System.out.println("integer == dou : " + (integer == dou)); // true
-        //System.out.println("integer2 == dou2 : "+(integer2 == dou2)); // geht nicht
+        // System.out.println("integer2 == dou2 : "+(integer2 == dou2)); // geht nicht
         System.out.println("integer2.equals(dou2) : " + integer2.equals(dou2)); // geht, aber false
         System.out.println("integer2 == dou : " + (integer2 == dou)); // true
 
@@ -97,9 +99,10 @@ public class TestsBuch {
         boolean flag = k++ == 5;
         flag = !flag;
         System.out.println("flag : " + flag);
-System.out.println(" -----------");
+        System.out.println(" -----------");
         byte b1 = 1;
-        //b1 = byte b1<<1; // so geht das nicht weil der Operator implizit auf int castet
+        // b1 = byte b1<<1; // so geht das nicht weil der Operator implizit auf int
+        // castet
         b1 = (byte) (b1 << 1);
         System.out.println("b1 = (byte) (b1<<1) : " + b1);
         int c = b1 << 1;
@@ -109,5 +112,61 @@ System.out.println(" -----------");
         e += b1;
         System.out.println("e += b1 : " + e);
 
+        System.out.println("-------- for-loop S.158-----");
+        int l = 0;
+        int ii = 0;
+        for (++l; l < 5; l++) {
+
+            System.out.println("ii : " + ii + " l : " + l);
+            ii++;
+        }
+
+        ArrayList al;
+        int i5;
+
+        for (i5 = 0, al = new ArrayList(); al.size() < 5; i5++) {
+            al.add(i5);
+            System.out.println(al.size());
+            System.out.println(al);
+        }
+        System.out.println(al);
+
+        System.out.println("------no Condition im for but break in loop-code");
+        ArrayList al2;
+        int i6;
+
+        for (i6 = 0, al2 = new ArrayList();; i6++) {
+            al2.add(i6);
+            System.out.println(al2.size());
+            System.out.println(al2);
+            if (al2.size() >= 5)
+                break;
+
+        }
+        System.out.println(al2);
+
+        System.out.println("------nothing in for-Statement all Conditions, break und iteration in loop-code");
+        int i7 = 0;
+        ArrayList al3 = new ArrayList<>();
+        for (;;) {
+            al3.add(i7);
+            System.out.println(al3.size());
+            System.out.println(al3);
+            if (al3.size() >= 5)
+                break;
+            i7++;
+        }
+        System.out.println(al3);
+
+        System.out.println("----- some boolean construct for loop ----");
+        boolean b2 = false;
+        for (int i8 = 0; b2 = !b2;) {
+            System.out.println("i8 : " + i8 + "b2 : "+b2);
+            i8++;
+            b2 = !b2;
+            if (i8 > 10){
+            System.out.println("final i8 : " + i8 + " b2 : "+b2);
+                break;}
+        }
     }
 }
