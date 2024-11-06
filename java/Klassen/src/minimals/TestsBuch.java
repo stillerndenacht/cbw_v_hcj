@@ -1,6 +1,7 @@
 package minimals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TestsBuch {
 
@@ -161,12 +162,50 @@ public class TestsBuch {
         System.out.println("----- some boolean construct for loop ----");
         boolean b2 = false;
         for (int i8 = 0; b2 = !b2;) {
-            System.out.println("i8 : " + i8 + "b2 : "+b2);
+            System.out.println("i8 : " + i8 + "b2 : " + b2);
             i8++;
             b2 = !b2;
-            if (i8 > 10){
-            System.out.println("final i8 : " + i8 + " b2 : "+b2);
-                break;}
+            if (i8 > 10) {
+                System.out.println("final i8 : " + i8 + " b2 : " + b2);
+                break;
+            }
         }
+        System.out.println("----- for each loop der einen Array in einen anderen Array doppelt----");
+
+        int[] arr = { 1, 3, 3, 5, 6, 10 };
+        int index = 0;
+        int[] arr2 = new int[arr.length];
+        for (int item : arr) {
+            System.out.printf("item at index %d : %d%n", index, item);
+            Arrays.fill(arr2, index, index + 1, item * 2);
+            index++;
+        }
+        System.out.println("array arr : " + Arrays.toString(arr));
+        System.out.println("array arr2 : " + Arrays.toString(arr2));
+
+        System.out.println("----- for each loop in loop der Werte vergleicht ggf. mit break----");
+
+        int index1 = 0;
+        int loopcount = 0;
+
+        for (int item : arr) {
+            System.out.println("loopcount : " + ++loopcount + " |  loop 1  index : " + index1 + " item : " + item);
+            int index2 = 0;
+            for (int item2 : arr2) {
+                System.out.println("loopcount : " + ++loopcount + " | loop 2 index2 : " + index2 + " item2 : " + item2);
+                if (item == item2) {
+                    System.out.printf(
+                            "%nfound equals at position: %d in arr with position: %d in arr2 - both items are : %d%n",
+                            index1, index2, item);
+                    // break; //findet keine Einträge die sich in einem Array doppeln, weil er bei der
+                    // ersten Übereinstimmung abbricht
+                    // continue;
+                }
+                index2++;
+            }
+            index1++;
+        }
+        System.out.println("final loop : " + loopcount);
+
     }
 }
