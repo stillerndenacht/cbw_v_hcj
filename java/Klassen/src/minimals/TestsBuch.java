@@ -197,7 +197,8 @@ public class TestsBuch {
                     System.out.printf(
                             "%nfound equals at position: %d in arr with position: %d in arr2 - both items are : %d%n",
                             index1, index2, item);
-                    // break; //findet keine Einträge die sich in einem Array doppeln, weil er bei der
+                    // break; //findet keine Einträge die sich in einem Array doppeln, weil er bei
+                    // der
                     // ersten Übereinstimmung abbricht
                     // continue;
                 }
@@ -207,5 +208,25 @@ public class TestsBuch {
         }
         System.out.println("final loop : " + loopcount);
 
+        System.out.println("------ Neuzuordnung eines Array -------------------------");
+
+        System.out.println("array arr : " + Arrays.toString(arr));
+        System.out.println("array arr2 : " + Arrays.toString(arr2));
+
+        int[] arr3 = { 10, 11, 12, 13 };
+        arr = arr3;
+        System.out.println("array arr : " + Arrays.toString(arr));
+        System.out.println("array arr3 : " + Arrays.toString(arr3));
+        arr[1] = 15;
+        System.out.println("array arr : " + Arrays.toString(arr));
+
+        // int[] arr = {20,30,35,36}; das funktioniert nicht
+        // arr = {20,30,35,36}; das funktioniert auch nicht
+        // ArrayList<Integer> arrL = new ArrayList<>();
+        // arrL.add(Arrays.asList(int[] arr));
+        // arrL.addAll(Arrays.asList(arr2));
+        // System.out.println(arrL);
+
+        // int[] arr4 = {};
     }
 }
