@@ -1,4 +1,10 @@
-<?php $seitentitel = '' ?>
+<?php $seitentitel = 'time-Vorlage' ?>
+<?php
+echo time()."<br>";
+echo microtime()."<br>"; # gibt time mit microsekunden vorangestellt
+echo microtime(true)."<br>"; # gibt die microtime als float
+$starttime = microtime(true);
+?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -13,9 +19,12 @@
     <h1><?php echo $seitentitel ?></h1>
     <article>
         <?php echo "Hier php Code"; ?>
-        <?php phpinfo(); # gibt eine Infoseite zur PHP-Installation aus -- sehr informativ
+        <?php 
         ?>
     </article>
+    <p style="background: yellow; text-align: right;">
+    <?php echo number_format(microtime(true) - $starttime, 6, ','); ?>
+    </p>
 </body>
 
 </html>
