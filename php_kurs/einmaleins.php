@@ -15,34 +15,38 @@ $starttime = microtime(true);
     <style>
         p {
             margin: 3px;
+            width: 20%;
         }
 
         h3 {
             background-color: lightgreen;
+            width: 20%;
         }
     </style>
 </head>
 
 <body>
     <h1><?php echo $seitentitel ?></h1>
-    <article>
+    <div>
 
         <?php
         $zahl1 = 0;
 
         for ($zahl1; $zahl1 <= 10; $zahl1++) { ?>
-            <h3>das ein mal eins für <?= $zahl1 ?></h3>
-            <?php
+            <article>
+                <h3>das ein mal eins für <?= $zahl1 ?></h3>
+                <?php
 
-            for ($zahl2 = 0; $zahl2 <= 10; $zahl2++) { ?>
-                <p>
-                    <?= $zahl1 . " * " . $zahl2 . " = " . $zahl1 * $zahl2 ?>
-                </p>
-        <?php
+                for ($zahl2 = 0; $zahl2 <= 10; $zahl2++) { ?>
+                    <p>
+                        <?= $zahl1 . " * " . $zahl2 . " = " . $zahl1 * $zahl2 ?>
+                    </p>
+            </article>
+    <?php
+                }
             }
-        }
-        ?>
-    </article>
+    ?>
+    </div>
     <p style="background: yellow; text-align: right;">
         <?php echo number_format(microtime(true) - $starttime, 6, ','); ?>
     </p>

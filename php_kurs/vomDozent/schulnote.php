@@ -1,8 +1,9 @@
 <?php
 	
-	$note = 3;
+	$note = 2;
 	$strNote = '';
-	
+
+
 	if($note == 1) {
 		$strNote = 'Sehr gut';
 	} else {
@@ -29,7 +30,6 @@
 		}
 	}
 
-	
 	
 	if($note == 1) {
 		$strNote = 'Sehr gut';
@@ -67,12 +67,22 @@
 		4 => 'Ausreichend',
 		5 => 'Mangelhaft',
 		6 => 'Ungenügend',
-		default =>'unzulässige Note' 
+		default => 'Unzulässige Note' 
 		
 	};
 	
 
-
+	$arrNoten = ['Sehr gut', 'Gut', 'Befriedigend', 'Ausreichend', 'Mangelhaft', 'Ungenügend'];
+   #$arrNoten = array(1 => 'Sehr gut', 'Gut', 'Befriedigend', 'Ausreichend', 'Mangelhaft', 'Ungenügend');
+	
+	if($note >=1 && $note <= 6) {
+		$strNote = $arrNoten[$note - 1];
+	   #$strNote = $arrNoten[$note];
+	} else {
+		$strNote = 'Unzulässige Note';
+	}
+	
+	
 	echo $note . ' = ' . $strNote;	
 	
 	
