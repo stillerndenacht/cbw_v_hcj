@@ -111,11 +111,47 @@ echo "<br>";
 $shiftin = array_unshift($arr8, "x");
 var_dump($shiftin);
 print_r($arr8);
-echo "<br>";
-
+echo "<br> slice <br>";
+# array_slice()
 $arr9 = array_slice($arr8, 2,5); # liefert einen Ausschnitt des arrays als neues Array vergibt neue numerische Indizes
 print_r($arr9);
+$arr10 = array_slice($arr8, -2, 2);
+echo "<br>";
+print_r($arr10);
+echo "<br>";
+print_r($arr8);
 echo "<br>";
 
 var_dump(in_array("b",$arr8));
 var_dump(in_array("b",$arr9));
+echo "<br>";
+
+
+
+
+
+
+#array_splice(); # ersetzt einen oder mehrere Werte(mehrere als Array einfügen)
+
+#array_merge(); # hängt zwei Arrays aneinander in ein neues Array und indiziert ggf. neu
+#arr1 + arr2 ; # Vereinigung - nur Indizes die in arr1 nicht vorhanden sind werden eingefügt
+#array_combine(); # kombiniert zwei Arrays als Key(array) und Value(array) in einen Array zu key-Value
+echo "<br> range <br>";
+print_r(range(1, 30, 3)); # erzeugt ein Array (Startwert, Endwert, Schrittweite)
+
+echo "<br> fill <br>";
+$fillarr = array_fill(0,10,"default"); # Erzeugt ein Array (Startwert, Endwert, Wert)
+print_r($fillarr);
+
+var_dump(array_key_exists(1,$fillarr));
+#isset
+
+var_dump(array_search("default", $fillarr)); # sucht einen Value und liefert den key
+#array_flip($arr); # tauscht key gegen value
+
+// sort(); # sortiert nach Values
+// rsort(); # sortiert nach Values rückwärts
+// ksort(); # sortiert nach keys
+// krsort(); # sortiert nach keys rückwärts
+// asort(); # sortiert nach Values ohne die keys zu ändern
+// arsort(); # sortiert nach Values ohne keys zu ändern rückwärts
