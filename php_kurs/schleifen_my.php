@@ -75,7 +75,7 @@ $starttime = microtime(true);
         do {
             echo "i = $i<br>";
             $i++;
-        } while ($i <= 5)
+        } while ($i <= 5);
 
 
         ?>
