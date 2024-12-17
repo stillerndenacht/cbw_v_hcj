@@ -11,27 +11,50 @@
 	
 	
 	
-	$array = [1,2,3,4,5,];
 	
-	$value = 10;
-	
-	function test(&$par) {
-		
-		$par[0] = 'Hallo';
-		
-		$par = 10;
-		
-		
+	function ausgabe($par, $par2, $par3 = "Dritter") {
+		echo "Parameterwert: $par<br>";
+		echo "Parameterwert: $par2<br>";
+		echo "Parameterwert: $par3<br>";
 	}
 	
 	
-
-	test($array);
 	
-	var_dump($array);
+	
+	#ausgabe('test', par3: 3, par2: 2);
+	
 	
 
-	echo 1 + print('Hallo');
+	
+	function summe($a, $b, ...$para) {
+		
+		
+		#echo $para[2];
+		
+	}
+	
+	summe(1,2,3,4,5);
+	
+	function summe1() {
+		
+		$array = func_get_args();
+		
+		#echo func_num_args();
+		
+		#echo $array[0];
+	}
+	
+	summe1(1,2,3,4,5);
+	
+	
+	
+	
+	
+	
+	
+	
+
+
 	
 	
 	
