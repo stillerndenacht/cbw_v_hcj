@@ -17,8 +17,9 @@ $starttime = microtime(true);
             margin-bottom: 0px;
         }
 
-        #name, #vn {
-            color: lightgray;
+        #name,
+        #vn {
+            color: darkmagenta;
         }
     </style>
 </head>
@@ -31,11 +32,11 @@ $starttime = microtime(true);
             <tr>
                 <td>
                     <label for="name">Name </label><br />
-                    <input type="text" name="name" id="name" value="Maxine" required />
+                    <input type="text" name="name" id="name"  required />
                 </td>
                 <td>
                     <label for="vn">Vorname </label><br />
-                    <input type="text" name="vn" id="vn" value="Musterlich" required />
+                    <input type="text" name="vn" id="vn"  required />
                 </td>
             </tr>
         </table>
@@ -53,17 +54,23 @@ $starttime = microtime(true);
 
 
 
-<?php
-echo "<h2>Die Serverseite von first_formular_vorl</h2>";
-// echo $_GET['name'] . '<br>';
-// echo $_GET['vn'] . '<br>';
-// echo $_GET['textarea'] . '<br>';
-// var_dump($_GET);
-echo   '<br>';
-echo $_POST['name'] . '<br>';
-echo $_POST['vn'] . '<br>';
-echo $_POST['textarea'] . '<br>';
-var_dump($_POST);
-?>
+    <?php
+    echo "<h2>Die Serverseite von first_formular_vorl</h2>";
+    // echo $_GET['name'] . '<br>';
+    // echo $_GET['vn'] . '<br>';
+    // echo $_GET['textarea'] . '<br>';
+    // var_dump($_GET);
+
+   
+
+    echo   '<br>--- Ausgabe ohne Sicherheit ---<br> ';
+    echo $_POST['name'] . '<br>'; 
+    echo $_POST['vn']. '<br>'; 
+    echo $_POST['textarea']. '<br>'; 
+
+    echo   '<br>--- Ausgabe des var_dump ---<br> ';
+    var_dump($_POST);
+    ?>
 </body>
+
 </html>
