@@ -39,4 +39,12 @@ VALUES
     ("Hohe", "Intelligenz", "macht nur depressiv",'.time().');
 ';
 echo $sql3."<br>";
-$db->exec($sql3);
+# $db->exec($sql3);
+var_dump($db->exec($sql3)); # Ausgabe : int(5) - Anzahl der Datensätze auf die sich der Befehl auswirkt
+
+$sql4 = '
+DELETE FROM freunde WHERE vorname="Reiner";
+';
+echo $sql4."<br>";
+
+var_dump($db->exec($sql4));

@@ -6,6 +6,7 @@ echo "<h2>---- pdo_databasethings --------</h2>";
 # $db = new PDO('mysql:host=localhost; dbname=mysql; port=3306','root','');
 # legt eine Datenbank-Verbindung an mit mysql als DB-Management
 # (DB-Management, Host=Ort bspw. URL, dbname=mysql(optional), port=3306 der Standardport für mysql(optional), Benutzer (hier root), Passwort (hier leer))
+# wobei der Anfang: DBManagement, Host, dbname == DSN Data Source Name
 # Ergebnis - leere Seite, keine Fehlermeldung
 
 # Verallgemeinerung:
