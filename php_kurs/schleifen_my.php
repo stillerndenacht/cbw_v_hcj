@@ -31,6 +31,7 @@ $starttime = microtime(true);
         for ($i = 0; $i < 10; $i++) :
             echo " i = $i<br>";
         endfor;
+        # funktioniert auch mit foreach / endforeach
 
         echo "Schleife die die Zahlen 1 - 1000 addiert <br>";
         $erg = 0;
