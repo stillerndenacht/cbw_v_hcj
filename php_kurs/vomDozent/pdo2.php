@@ -3,7 +3,7 @@
 
 	include 'includes/PDOConnection.inc.php';
 	
-	$db->exec('USE FAG312');				#DB auswählen
+	$db->exec('USE FAG312');				#DB auswÃ¤hlen
 	
 	
 	$vname = 'Manfred NEU TEST';
@@ -25,7 +25,7 @@
  
  
  
-# Statement für (R)ead C(R)UD
+# Statement fÃ¼r (R)ead C(R)UD
 
 $sql = 'SELECT * FROM Freunde';
 

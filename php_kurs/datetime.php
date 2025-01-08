@@ -1,3 +1,4 @@
+<!-- Link zur Referenz-Seite der Kürzel https://www.php.net/manual/en/datetime.format.php -->
 <?php
 echo "<br>---------- time ---------<br>";
 echo time() . "<br>"; # Real Time Clock RTC - Server-System-Zeit Ausg.: 1736239235

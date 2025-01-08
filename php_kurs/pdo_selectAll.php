@@ -1,15 +1,18 @@
-<!-- damit das hier läuft muss pdo_dbthings2.php über http://localhost/hcj_cbw/php_kurs/ aufgerufen werden. 
+<!-- damit das hier läuft muss pdo_dbthings_freunde.php über http://localhost/hcj_cbw/php_kurs/ aufgerufen werden. 
  Denn sonst gibt es die Datenbank nicht-->
 
 <?php $seitentitel = 'komische Freunde' ?>
 <?php
-include 'includes/PDOConnect.inc.php';
+include 'includes/PDOConnect_freunde.inc.php';
 $db->exec('USE FAGPHP');
 $sql = 'SELECT id, vorname, nachname, zeit FROM PDOFreunde ORDER BY id DESC';
 $statement = $db->query($sql);
+
 $freunde = $statement->fetchAll();
 # var_dump($freunde); # nur zum Test
+
 $anzahl = count($freunde);
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -31,7 +34,9 @@ $anzahl = count($freunde);
 
 <body>
     <h1><?php echo $seitentitel ?></h1>
+    
     <p><?= "Anzahl der Datensätze :  $anzahl" ?></p>
+
     <Table>
         <thead>
             <tr>
@@ -42,14 +47,19 @@ $anzahl = count($freunde);
             </tr>
         </thead>
         <tbody>
+
             <?php if ($anzahl > 0): ?>
                 <?php foreach ($freunde as $freund): ?>
 
                     <tr>
-                        <td><?= $freund['id'] ?></td>
+
+                        <td><a href="pdo_selectOne.php?id=<?= $freund['id'] ?>"><?= $freund['id'] ?></a></td>
+                        <!-- die id des jeweiligen Datensatzes wird einfach im link als php-Schnipsel mit übergeben - wie simpel-->
+
                         <td><?= htmlspecialchars($freund['vorname']) ?></td>
                         <td><?= htmlspecialchars($freund['nachname']) ?></td>
                         <td><?= date('Y m d H:i:s', $freund['zeit']) ?></td>
+
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>

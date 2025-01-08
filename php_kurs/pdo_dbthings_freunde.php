@@ -1,6 +1,6 @@
 <!-- pdo_selectAll.php benutzt das hier -->
 <?php
-include 'includes/PDOConnect.inc.php';
+include 'includes/PDOConnect_freunde.inc.php';
 
 echo "<h2>---- pdo_dbthings_freunde --------</h2>";
 
