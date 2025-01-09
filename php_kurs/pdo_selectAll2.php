@@ -1,7 +1,7 @@
 <!-- damit das hier läuft muss pdo_dbthings_freunde.php über http://localhost/hcj_cbw/php_kurs/ aufgerufen werden. 
  Denn sonst gibt es die Datenbank nicht-->
 
-<?php $seitentitel = 'komische Freund:innen' ?>
+<?php $seitentitel = 'komische Freunde:innen2' ?>
 <?php
 include 'includes/PDOConnect_freunde.inc.php';
 $db->exec('USE FAGPHP');
@@ -53,7 +53,7 @@ $anzahl = count($freunde);
 
                     <tr>
 
-                        <td><a href="pdo_selectOne.php?id=<?= $freund['id'] ?>"><?= $freund['id'] ?></a></td>
+                        <td><a href="pdo_selectOne2.php?id=<?= $freund['id'] ?>"><?= $freund['id'] ?></a></td>
                         <!-- die id des jeweiligen Datensatzes wird einfach im link als php-Schnipsel mit übergeben - wie simpel-->
 
                         <td><?= htmlspecialchars($freund['vorname']) ?></td>
