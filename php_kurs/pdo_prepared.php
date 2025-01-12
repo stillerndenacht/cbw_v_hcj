@@ -6,6 +6,7 @@ $db->exec('USE FAGPHP');
 $id = $_GET['id'];
 $sql = 'DELETE FROM freunde WHERE id ='.$id;
 $db->exec($sql);
+PDO::exec($sql);
 
 # prepared Statements funktionieren nur für Werte - nicht für Tabellennamen oder Spaltennamen
 

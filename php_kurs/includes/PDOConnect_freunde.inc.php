@@ -14,7 +14,7 @@ $options = array(
 
 try {
     $db = new PDO("mysql:host=$host; dbname=$dbname; port=$port", $user, $pw, $options);
-    # var_dump($db);
+     var_dump($db);
 } catch (PDOException $e) {
     echo $e->getMessage();
     die("<br>Diese DB : $dbname existiert nicht");

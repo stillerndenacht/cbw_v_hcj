@@ -1,0 +1,38 @@
+<?php
+echo "---------- Aufgabe 1 -------------";
+echo "<br>";
+$array1 = array(1,2,3,4,5);
+echo is_array($array1);
+echo "<br>";
+echo "<br>";
+echo count($array1);
+echo "<br>";
+echo $array1[3];
+echo "<br>";
+$array1[] = 6;
+$array2 = array_reverse($array1);
+echo $array2[3];
+echo "<br>";
+echo count($array2);
+echo "<br>";
+echo "---------- Aufgabe 3 -------------";
+echo "<br>";
+$a = ["1" => "A", 1 => "B", "C", 2 => "D"];
+echo count($a);
+echo "<br>";
+echo "---------- Aufgabe 10 -------------";
+echo "<br>";
+$a = array('a', 'b', 'c');
+$a = array_keys(array_flip($a));
+var_dump($a);
+echo "<br>";
+var_dump(array_keys($a));
+echo "<br>";
+var_dump(array_keys(array_flip($a)));
+#echo $a;
+echo "<br>";
+echo "---------- Aufgabe 20 -------------";
+echo "<br>";
+$a = [1 => 'Apple', 3 => 'Cactus', 5 => 'Elderflower'] + 
+     ['Banana', 'Dragon Fruit', 'Fig'];
+echo count($a);
