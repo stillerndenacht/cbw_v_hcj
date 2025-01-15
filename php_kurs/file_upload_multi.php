@@ -64,11 +64,11 @@ $starttime = microtime(true);
             echo "Upload gescheitert";
         }
     }
-    # upload_max_filesize kann man in php.ini einstellen (Standard 40 MB)  
-    # POST_max_size kann man in der php.ini anpassen (Standard 40 MB)
-    # max_file_uloads ist Anzahl der möglichen Dateien pro Upload in php.ini (Standard 20)
+    # upload_max_filesize   kann man in php.ini einstellen (Standard 40 MB)  
+    # post_max_size         kann man in der php.ini anpassen (Standard 40 MB)
+    # max_file_uloads       ist Anzahl der möglichen Dateien pro Upload in php.ini (Standard 20)
     # post_max_size zählt also alle Dateien pro upload zusammen..
-    # file_uploads=Off würde in der php.ini den upload generell verhindern
+    # file_uploads=Off      würde in der php.ini den upload generell verhindern
     sleep(1);
     ?>
 </body>
