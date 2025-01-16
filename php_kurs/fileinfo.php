@@ -16,6 +16,7 @@ echo "<br>";
 // var_dump(pathinfo($file)); bringt nix auf die Punkte
 
 $file = 'uploads/images/file_upload_testfile.jpg';
+$file = 'uploads/';
 if (file_exists($file)) {
     echo "<img src='$file'/>";
 }
