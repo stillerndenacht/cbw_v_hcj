@@ -34,7 +34,7 @@ echo readdir($dir) . "<br>"; # Ausgabe: ..
 #var_dump(readdir($dir));
 echo readdir($dir) . "<br>"; # Ausgabe: file_upload_testfile copy.txt
 echo readdir($dir) . "<br>"; # Ausgabe: file_upload_testfile.txt
-echo readdir($dir) . "<br>"; # Ausgabe: nix mehr... weil alles ausgelesen
+echo readdir($dir) . "<br>"; # Ausgabe: nix mehr... weil alles ausgelesen, Rückgabewert false
 
 var_dump(readdir($dir));
 closedir($dir); # schließt den Stream auf den Ordner
