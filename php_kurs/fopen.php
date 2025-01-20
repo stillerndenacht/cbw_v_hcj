@@ -77,7 +77,7 @@ var_dump(file_get_contents('file1_datei.txt')); # gibt den gesamten Inhalt als e
 echo "<br>------ Write bzw. Overwrite -----------<br>";
 # Datei öffnen bzw. anlegen - ACHTUNG vorhandene Dateien werden ggf. leer überschrieben
 if ($datei = fopen('file2_datei.txt', 'wb')) {
-    fwrite($datei, "Ich bin eine neue Datei" . PHP_EOL);
+    fwrite($datei, "Ich bin eine neue Datei" . PHP_EOL); # PHP_EOL fügt einen End of Line an bzw. Carriage Return
     fwrite($datei, "Ich bin eine neue zeile" . PHP_EOL);
     fclose($datei);
 }
@@ -92,8 +92,26 @@ if ($datei = fopen('file2_datei.txt', 'ab')) {
 }
 # existiert die Datei nicht .. wird sie neu angelegt
 if ($datei = fopen('file3_datei.txt', 'ab')) {
-    fwrite($datei, "Ich bin eine neur Anhang" . PHP_EOL);
+    fwrite($datei, "Ich bin eine neur Anhang" . PHP_EOL); # Rückgabewert von fwrite() ist die Anzahl der geschriebenen Zeichen oder false
     fwrite($datei, "Ich bin noch ein Anhang" . PHP_EOL);
     fclose($datei);
 }
 echo "<br>Die angelegten bzw. geänderten Dateien finden sich im Dateiexplorer je nach Pfad-Angabe<br>";
+
+#file_put_contents('pfad/zur/datei.txt', 'text oder'. $variable. 'zum text'); # schreibt alles in die Datei
+#file_put_contents('pfad/zur/datei.txt', 'text oder'. $variable. 'zum text', FILE_APPEND); # schreibt im Append-Modus
+#file_put_contents('pfad/zur/datei.txt', 'text oder'. $variable. 'zum text', FILE_APPEND | LOCK_EX); # LOCK_EX sperrt die Datei exklusiv, solange sie beschrieben wird
+echo "<br>------ Öffnen einer Internetquelle -----------<br>";
+# was natürlich nicht ungefährlich ist
+# deswegen kann man es in der php.ini über: allow_url_fopen=Off auch deaktivieren
+if ($datei = @fopen('https://de.wikipedia.org/robots.txt', 'r')) {
+    # feof() - End of File - hier also : solange bis NICHT End of file
+    while (!feof($datei)) {
+        $dateiout = fgets($datei);
+        echo $dateiout . "<br>...<br>";
+    }
+
+    fclose($datei);
+} else {
+    echo "ERROR bei fopen()";
+}
