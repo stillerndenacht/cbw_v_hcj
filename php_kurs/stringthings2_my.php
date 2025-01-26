@@ -43,38 +43,21 @@ for ($i = 0; $i < strlen($shortText); $i++) {
     echo $shortText[$i] . '-';
 }
 echo '<br>';
+echo "<br>---- chunk_split --<br>";
 echo chunk_split($shortText, 5, '-|-') . '<br>'; # ($was , Steps, Einfügung)
+echo substr(chunk_split($shortText, 5, '-|-'), 0, -strlen('-|-')) . '<br>';
+# die letzte Einfügung wird wieder abgeschnitten
 
-$hashmichText = "ich bin ein bisschen verhasht";
-$hex = md5($hashmichText);
-$md = "e10dd4eeadd0ba9d1c2165f8a8f16f9f";
-echo $md . '<br>';
-echo $hex . '<br>';
-$hashmichText = "ich bin ein bisschen verhuscht";
-$hex = md5($hashmichText);
-echo $hex . '<br>';
+echo "<br>---- wordwrap --<br>";
+# gemacht für Zeilenumbruch in Texten wordwrap(String , nach Anzahl Zeichen[default 75], mit [default \n] umbrechen, trennen im Wort [default false])
 
-echo "<br>---- md5 für Passwörter - ist aber leider nicht 100% sicher --<br>";
-# weil es nicht sicher ist, dass es unmöglich ist, dass verschiedene Passwörter nicht doch gleiche Hashwerte ergeben
-$pwd = md5('geheim');
-echo $pwd . '<br>';;
-var_dump(md5('geheim') == $pwd); # bool(true)
+$wrap = wordwrap($shortText, 7, "<br>", false). '<br>';
+echo $wrap;
 
-echo "<br>---- md5 Test für Zahlen --<br>";
-$count = 100;
-for ($i = 0; $i <= $count; $i++) {
-    #echo "i = ".$i. "<br>";
-    for ($j = 0; $j <= $count; $j++) {
-        #echo " ".$j." ";
-        if (md5($i) == md5($j) && !($i == $j)) {
-            echo "für i = " . $i . " mit dem md5-Hash : " . md5($i) . "<br>" . "und j = " . $j . " mit dem md5-Hash : " . md5($j) . "<br> gilt der gleiche Hashwert<br>";
-        }
-    }
-}
-echo "<br> ---- Ende md5 Test ---<br>";
-
-echo strtok($shortText, " ") . "<br>"; # ?? was macht das ??
-echo strtok($shortText, "wi") . "<br>";
+echo "<br>---- strtok --<br>";
+# liefert den String bis zum angegebenen Trennzeichen (nur Einzelzeichen )
+echo strtok($shortText, " ") . "<br>"; 
+echo strtok($shortText, "r") . "<br>";
 
 // $exploder = explode(" ",$longText);
 // var_dump($exploder); # das Ergebnis ist noch lange nicht gut (als Quelltext anzeigen) - Muss also weiter bearbeitet werden.
@@ -126,3 +109,26 @@ echo ucfirst("äpfel öl")."<br>"; # funktioniert aber nicht bei Umlauten
 echo ucwords($strangeText)."<br>"; # macht den ersten Buchstaben jedes Wortes groß
 echo ucwords($strangeText2)."<br>"; # funktioniert aber nicht bei Umlauten
 
+echo "<br><br> ---- substr ---<br><br>";
+$strText = "abcd efgh ijkl mnop ABCD EFGH IJKL MNOP äöü ÄÖÜ";
+echo substr($strText, -10 , 1)."<br>";
+
+echo "<br><br> ---- strpos, stripos, strripos, mb_stripos---<br><br>";
+echo strpos($strText, 'B', -2)."<br>"; # 
+echo stripos($strText, 'B', -2)."<br>";
+
+echo strripos($strText, 'K')."<br>";# sucht rückwärts case-in-sensitiv die Position
+echo mb_stripos($strText, 'K')."<br>";
+
+echo "<br><br> ---- strstr---<br><br>";
+echo strstr('emailname@provider.de', '@')."<br>"; # Ausgabe : @provider.de
+echo strstr('emailname@provider.de', '@', true)."<br>"; # Ausgabe : emailname
+
+echo substr_count($strText,'B'); # zählt substrings
+
+echo strpbrk($strText,'acB');
+
+echo "<br><br> ---- parse_url---<br><br>";
+var_dump(parse_url("https://username:pwdgeheim@www.google.de:8080/testungen/test.php?test=1#anker")); # zerlegt in alle Einzelteile die es so geben könnte
+
+# metaphone(), levenstein(), similar_text(), soudex() - Ähnlichkeitsanalysen für english
