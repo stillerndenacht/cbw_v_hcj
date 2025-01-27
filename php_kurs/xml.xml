@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- standalone= ist nicht notwendig, aber bestimmt ob die Datei irgendwie validiert wird -->
+<freunde>
+    <freund gender="female">
+        <vorname>Sandra</vorname>
+        <nachname>Sonderlich</nachname>
+        <alter>30</alter>
+    </freund>
+    <freund gender="female">
+        <vorname>Selina</vorname>
+        <nachname>Seltsam</nachname>
+        <alter></alter>
+    </freund>
+
+</freunde>

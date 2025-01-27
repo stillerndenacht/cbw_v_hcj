@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<freunde> 
+    <freund gender="female" klasse="123">
+        <vorname>Sandra</vorname>
+        <nachname>Sonderlich</nachname>
+        <alter>30</alter>
+    </freund>
+    <freund>
+        <vorname>Selina</vorname>
+        <nachname>Seltsam</nachname>
+        <alter>50</alter>
+    </freund>
+    <freund gender="male">
+        <vorname>Serkan</vorname>
+        <nachname>Sonderlich</nachname>
+        <alter>29</alter>
+    </freund>
+    <freund>
+        <vorname>Karlo</vorname>
+        <nachname>Komisch</nachname>
+        <alter>67</alter>
+    </freund>
+    <freund>
+        <vorname>Katharina</vorname>
+        <nachname>Komplex</nachname>
+        <alter>19</alter>
+    </freund>
+    <freund>
+        <vorname>Harro</vorname>
+        <nachname>Heimlich</nachname>
+        <alter>37</alter>
+    </freund>
+    <freund>
+        <vorname>Ullrich</vorname>
+        <nachname>Übel</nachname>
+        <alter>51</alter>
+    </freund>
+
+</freunde>
