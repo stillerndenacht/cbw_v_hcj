@@ -16,7 +16,7 @@
         <?php
         if (($feed = simplexml_load_file('https://www.zdf.de/rss/zdf/nachrichten')) != false) {
             echo "juhu" . "<hr>";
-            #var_dump($feed);
+            var_dump($feed);
             $rsstitle = $feed->channel->title;
             $rssdate = $feed->channel->pubDate;
             $rssitemcount = $feed->channel->item->count();
