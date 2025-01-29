@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <teil id="0">
+        <name>Nulltes</name>
+    </teil>
+    <teil id="2">
+        <name>Zweite</name>
+    </teil>
+    <teil id="3">
+        <name>Drittes</name>
+    </teil>
+</root>

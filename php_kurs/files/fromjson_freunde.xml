@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <freund id="7">
+        <vorname>Zweiter</vorname>
+        <nachname>Insert</nachname>
+        <zeit>1736762811</zeit>
+    </freund>
+    <freund id="6">
+        <vorname>Erster</vorname>
+        <nachname>Insert</nachname>
+        <zeit>1736762806</zeit>
+    </freund>
+    <freund id="5">
+        <vorname>Hohe</vorname>
+        <nachname>Intelligenz</nachname>
+        <zeit>1736762773</zeit>
+    </freund>
+    <freund id="4">
+        <vorname>Aber</vorname>
+        <nachname>Vergesslichkeit</nachname>
+        <zeit>1736762773</zeit>
+    </freund>
+    <freund id="3">
+        <vorname>Völlige</vorname>
+        <nachname>Dummheit</nachname>
+        <zeit>1736762773</zeit>
+    </freund>
+    <freund id="2">
+        <vorname>Blanker</vorname>
+        <nachname>Irrsinn</nachname>
+        <zeit>1736762773</zeit>
+    </freund>
+    <freund id="1">
+        <vorname>Reiner</vorname>
+        <nachname>Wahnsinn</nachname>
+        <zeit>1736762773</zeit>
+    </freund>
+</root>
