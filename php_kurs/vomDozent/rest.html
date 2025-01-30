@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+  <head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seitenname</title>
+	
+	<script>
+	
+		function loadDoc() {
+		  const xhttp = new XMLHttpRequest();
+		  xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  document.getElementById("daten").innerHTML = this.responseText;
+			}
+		  };
+		  xhttp.open("GET", "http://localhost:8080/__PHPA/service.php");
+		  xhttp.send(this.responseText);
+		}
+		
+	</script>
+	
+  </head>
+  
+  <body>
+  
+	<h1> REST - Demo </h1>
+	
+	<div id="daten"></div>
+	
+	<br>
+	
+	<!--button onclick="loadDoc()">Laden</button-->
+
+	<script>setInterval(loadDoc, 2000);</script>
+	
+	
+  </body>
+
+</html>

@@ -1,6 +1,12 @@
 <?php
 // keine Kommentare in XML die werden alle mit in das Objekt eingebaut und bringen die Struktur durcheinander
 // standalone im Doctype ist nicht nötig
+
+#----------- namespaces XML ----------------------
+# man kann auch namespaces für xml benutzen
+# xmlns:media="url" ... siehe die rss-seiten diverser rss Anbieter
+# https://www.w3schools.com/xml/xml_namespaces.asp
+
 $xmlstring = <<<XML
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <freunde> 

@@ -13,3 +13,8 @@
     </freund>
 
 </freunde>
+
+<!-- ......... namespaces XML .........
+# man kann auch namespaces für xml benutzen
+# xmlns:media="url" ... siehe die rss-seiten diverser rss Anbieter 
+https://www.w3schools.com/xml/xml_namespaces.asp -->
