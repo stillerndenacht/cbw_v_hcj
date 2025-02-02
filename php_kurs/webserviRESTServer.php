@@ -32,7 +32,7 @@ function lotto(){
 }
 
 $service = $_GET['serv'] ?? '';
-
+var_dump($service);
 if ($service == "zufall") {
     $antwort = zufall();
 } elseif ($service == "zitat") {
@@ -47,6 +47,6 @@ echo $antwort;
 
 #--------- Aufruf in webserviceREST_use.php ----------
 
-// $webservicecall = file_get_contents('http://localhost/hcj_cbw/php_kurs/webserviREST.php?serv= ');
+// $webservicecall = file_get_contents('http://localhost/hcj_cbw/php_kurs/webserviREST.php?serv= ... ');
 
 // echo $webservicecall;

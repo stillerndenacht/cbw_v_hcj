@@ -1,19 +1,58 @@
 <?php
-function click($clicked){
-    var_dump($clicked);
 
-#$webservicecall = file_get_contents('http://localhost/hcj_cbw/php_kurs/webserviRESTServer.php?serv=zitat');
+$call = "hier kommt die Antwort";
 
-#$webservicecall = file_get_contents('http://localhost/hcj_cbw/php_kurs/webserviRESTServer.php?serv=zufall');
+function click($clicked)
+{
+    #var_dump($clicked);
 
-$webservicecall = file_get_contents("http://localhost/hcj_cbw/php_kurs/webserviRESTServer.php?serv=$clicked");
+    $webservicecall = file_get_contents("http://localhost/hcj_cbw/php_kurs/webserviRESTServer.php?serv=$clicked");
 
- return $webservicecall;
+    global $call;
+    $call = $webservicecall;
 }
+
+// für diese Variante müssen die namen der buttons abgefragt
+// if (isset($_GET['zufall'])) {
+
+//     click('zufall');
+// } elseif (isset($_GET['zitat'])) {
+
+//     click('zitat');
+// } elseif (isset($_GET['lotto'])) {
+
+//     click('lotto');
+// } else {
+//     click('reset');
+// }
+
+if (isset($_GET)) {
+    var_dump($_GET['button']);
+    switch ($_GET['button']) {
+        case 'zufall':
+            click('zufall');
+            break;
+        case 'zitat':
+            click('zitat');
+            break;
+        case 'lotto':
+            click('lotto');
+            break;
+        case 'reset':
+            click('reset');
+            break;
+        default:
+            click('reset');
+            break;
+    }
+} else {
+    click('reset');
+}
+
+
 ?>
 <?php $seitentitel = 'Webservice REST' ?>
 <?php
-
 $starttime = microtime(true);
 ?>
 <!DOCTYPE html>
@@ -25,28 +64,36 @@ $starttime = microtime(true);
     <meta name="description" content="Beschreibung der Seite ca. 150 Zeichen">
     <title><?php echo $seitentitel ?></title>
     <style>
-        label {
-            font-size: 12px;
-            margin-bottom: 0px;
+        button {
+            font-size: 20px;
+            margin: 5px;
+            color: darkmagenta;
         }
 
-        #name,
-        #vn {
-            color: darkmagenta;
+        p {
+            font-size: 25px;
+            font-weight: bolder;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: lightgreen;
         }
     </style>
 </head>
+
 <body>
     <h1><?php echo $seitentitel ?></h1>
-    
+
     <form action="<?= $_SERVER["PHP_SELF"] ?>" method="GET">
-        
-        <button type="button" value="Zitat" onclick="<?php echo "click('zitat')";?>" serv="zitat">Zitat</button>
-        <input type="button" value="Zufall" serv="zufall" />
+
+        <button type="submit" name="button" value="zufall">Zufall</button>
+        <button type="submit" name="button" value="zitat">Zitat</button>
+        <button type="submit" name="button" value="lotto">Lotto</button>
+        <button type="submit" name="button" value="reset">Reset</button>
+
     </form>
-    <!-- <p><?= $webservicecall?></p> -->
+    <p><?php echo $call; ?></p>
     <p style="background: yellow; text-align: right;">
         <?php echo number_format(microtime(true) - $starttime, 6, ','); ?>
     </p>
 </body>
+
 </html>

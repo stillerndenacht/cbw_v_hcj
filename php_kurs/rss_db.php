@@ -68,8 +68,8 @@ $dbrss->exec($sql2);
 #----------------------------------------------------
 # Abrufen des Rss-Feed-Links und Zerlegen und verteilen
 
-#$feedlink = 'https://www.zdf.de/rss/zdf/nachrichten';
-$feedlink = 'https://www.deutschlandfunk.de/nachrichten-100.rss';
+$feedlink = 'https://www.zdf.de/rss/zdf/nachrichten';
+#$feedlink = 'https://www.deutschlandfunk.de/nachrichten-100.rss';
 
 if (($feed = simplexml_load_file($feedlink)) != false) {
     echo "juhu" . "<hr>";
