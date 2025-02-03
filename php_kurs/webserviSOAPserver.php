@@ -62,7 +62,7 @@ $title = $feed['title'];
 $description = $feed['description'];
 $pubdate = (new DateTime('@' . $feed['pubdate']))->format("d.M.Y H:i:s");
 
-return "Feed von : $channeltitle <br> Titel : $title <br> Datum : $pubdate <br> Newstext : <br> $description <hr>";
+return "Feed von : $channeltitle <br> Titel : $title <br> Datum : $pubdate <br> Newstext : <br> $description <br>";
 # return var_dump($feed); # nur für den Test wenn man diese Seite direkt aufruft
 
 }
