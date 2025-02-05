@@ -4,10 +4,10 @@
 $starttime = microtime(true);
 ?>
 <?php
-function logout(){
-    setcookie('login', '', 0, '/');
-    header('Location: login_aufg.php');
-}
+var_dump($_COOKIE);
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -18,16 +18,21 @@ function logout(){
     <meta name="description" content="Beschreibung der Seite ca. 150 Zeichen">
     <title><?php echo $seitentitel ?></title>
     <style>
-                
+
     </style>
 </head>
 
 <body>
     <h1><?php echo $seitentitel ?></h1>
-    <p>Sie haben sich erfolgreich eingeloggt</p>
-    <!-- <button><a href="login_aufg.php">AUSLOGGEN</a></button> -->
-    <button onclick="<?php logout(); ?>"></button>
+    <?php if ($_COOKIE['login'] == 'in') { ?>
+        <p>Sie haben sich erfolgreich eingeloggt</p>
+        <button><a href="login_aufg.php">AUSLOGGEN</a></button>
+    <?php } else { ?>
+        <p>Sie sind nicht eingeloggt</p>
+        <button><a href="login_aufg.php">ZUM LOGIN</a></button>
+    <?php } ?>
 
-    </body>
+
+</body>
 
 </html>
