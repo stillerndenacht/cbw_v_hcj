@@ -1,32 +1,32 @@
-<?php $seitentitel = 'Login Formular (mit Security)' ?>
 <?php
+session_start();
+$seitentitel = 'Session Login Formular (mit Security)';
 $starttime = microtime(true);
-?>
-<?php
+
 
 $name = "";
 $pw = "";
 $users = ['usera' => 'password', 'userb' => 'pass!word', 'userc' => 'pässwörd'];
 $msg = "Bitte melden Sie sich an!";
 
-$loginname = $_COOKIE['loginname'] ?? false;
-var_dump($_COOKIE);
+$loginname = $_SESSION['loginname'] ?? false;
+var_dump($_SESSION);
 
 #------- was im POST? ------------
-if (isset($_POST['name']) && isset($_POST['pw'])) {
+if (isset($_POST['name']) && isset($_POST['pw'])&& !$loginname) {
 
     $name = htmlspecialchars($_POST['name']);
     $pw = htmlspecialchars($_POST['pw']);
     $msg = "";
-    
-#------- passt der Post zum Userarray
-    if (isset($users[$name]) && $users[$name] == $pw) {
 
-        setcookie('loginname', $name, 0, '/');
-        header('Location: login_aufg.php');
+    #------- passt der Post zum Userarray
+    if (isset($users[$name]) && $users[$name] == $pw) {
+        $_SESSION['loginname'] = $name;
+
+        header('Location: login_sessioaufg.php');
         die;
     } else {
-        
+
         $msg = "Fehler bei der Anmeldung!";
     }
 }
@@ -81,14 +81,14 @@ if (isset($_POST['name']) && isset($_POST['pw'])) {
             <input type="reset" value="Zurücksetzen" />
 
         <?php } else {
-            
-            $msg = $loginname."  Sie haben sich erfolgreich eingeloggt";
 
-            var_dump($_COOKIE);
+            $msg = $loginname . "  Sie haben sich erfolgreich eingeloggt";
+
+            var_dump($_SESSION);
             var_dump($loginname);
         ?>
             <p><?= $msg ?></p>
-            <button><a href="logout_aufg.php">AUSLOGGEN</a></button>
+            <button><a href="logout_sessioaufg.php">AUSLOGGEN</a></button>
 
         <?php } ?>
 

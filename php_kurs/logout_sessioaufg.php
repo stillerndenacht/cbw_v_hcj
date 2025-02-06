@@ -1,16 +1,18 @@
-<?php $seitentitel = 'Erfolgreicher Logout' ?>
+<?php 
+session_start();
+$seitentitel = 'Session Erfolgreicher Logout' ?>
 <?php
 
 $starttime = microtime(true);
 ?>
 <?php
-
-$loginname = $_COOKIE['loginname'] ?? false;
-if (@$_COOKIE['loginname']) {
-    setcookie('loginname', '', 0, '/');
-    header($_SERVER['PHP_SELF']);
+var_dump($_SESSION);
+$loginname = $_SESSION['loginname'] ?? false;
+if ($_SESSION['loginname']) {
+    unset($_SESSION['loginname']);
+    #header($_SERVER['PHP_SELF']);
 }
-#var_dump($_COOKIE);
+var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -28,14 +30,14 @@ if (@$_COOKIE['loginname']) {
 
 <body>
     <h1><?php echo $seitentitel ?></h1>
-    <?php if ($loginname) {
-        #setcookie('loginname', '', 0, '/');
-    ?><p>Sie haben sich erfolgreich ausgeloggt</p>
-        <button><a href="login_aufg.php">ZUM LOGIN</a></button>
+    <?php if ($loginname) {?>
+
+        <p>Sie haben sich erfolgreich ausgeloggt</p>
+        <button><a href="login_sessioaufg.php">ZUM LOGIN</a></button>
 
     <?php } else { ?>
         <p>Sie sind nicht eingeloggt</p>
-        <button><a href="login_aufg.php">ZUM LOGIN</a></button>
+        <button><a href="login_sessioaufg.php">ZUM LOGIN</a></button>
     <?php } ?>
 
 

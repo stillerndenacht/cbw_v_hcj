@@ -1,5 +1,6 @@
 <?php
 session_start();
+# session_start() muss auf jede Seite die auf die Sessiondaten zugreifen soll
 var_dump($_SESSION);
 # Parameter dazu in php.ini
 # session.auto_start=0
