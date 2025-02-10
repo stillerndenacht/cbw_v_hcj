@@ -38,16 +38,16 @@ class Person
 
     public function setEmails(...$emails)
     {
-        var_dump($emails);
+
         $emaillist = [];
-        #var_dump($this->emails);
+
         foreach ($emails as $email) {
+
             if (!in_array($email, $emaillist)) {
-                $emaillist = $email;
-                #$emails = sort($emails);
+                $emaillist[] = $email;
             }
         }
-
+        sort($emaillist);
         $this->emails = $emaillist;
     }
     # ---------- plz --------------
@@ -59,7 +59,7 @@ class Person
     public function setPlz($plz)
     {
         $msg = 'PLZ ok';
-        $plz = trim($plz);
+        $plz = trim((string) $plz);
         if (is_numeric($plz)) {
             if (strlen($plz) < 5) {
                 $msg = 'PLZ zu kurz';
@@ -72,7 +72,7 @@ class Person
             $msg = 'PLZ darf nur Ziffern enthalten!';
         }
 
-        echo $msg;
+        echo "<hr>".$msg."<hr>";
     }
     # ----------- ort ---------------
     public function getOrt()
@@ -111,5 +111,9 @@ $person3 = new Person;
 $person1->setVname('Erich');
 $person1->setNname('Einser');
 $person1->setEmails('ericheinser@emx.ee', 'e.einser@email.ee');
+$person1->setPlz("10955");
+$person1->setOrt("Berlin");
+$person1->setStrasse("Schnellstraße");
+echo "<hr>".$person1->getAdress()."<hr>";
 
 var_dump($person1);
