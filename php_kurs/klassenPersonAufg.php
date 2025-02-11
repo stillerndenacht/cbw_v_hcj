@@ -50,6 +50,26 @@ class Person
         sort($emaillist);
         $this->emails = $emaillist;
     }
+    # ---------- str_is_of_int --------
+    private function str_isof_int($string)
+    {
+        $notok = '';
+        $strarr = str_split($string);
+        $check = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        #var_dump($strarr);
+        foreach ($strarr as $a) {
+            var_dump($a);
+            echo $a;
+            if (!in_array($a, $check)) {
+                $notok = 'notok';
+            }
+        }
+        if ($notok == 'notok') {
+            return false;
+        } else {
+            return true;
+        }
+    }
     # ---------- plz --------------
     public function getPlz()
     {
@@ -60,7 +80,7 @@ class Person
     {
         $msg = 'PLZ ok';
         $plz = trim((string) $plz);
-        if (is_numeric($plz)) {
+        if ($this->str_isof_int($plz)) {
             if (strlen($plz) < 5) {
                 $msg = 'PLZ zu kurz';
             } elseif (strlen($plz) > 5) {
@@ -72,7 +92,7 @@ class Person
             $msg = 'PLZ darf nur Ziffern enthalten!';
         }
 
-        echo "<hr>".$msg."<hr>";
+        echo "<hr>" . $msg . "<hr>";
     }
     # ----------- ort ---------------
     public function getOrt()
@@ -111,9 +131,9 @@ $person3 = new Person;
 $person1->setVname('Erich');
 $person1->setNname('Einser');
 $person1->setEmails('ericheinser@emx.ee', 'e.einser@email.ee');
-$person1->setPlz("10955");
+$person1->setPlz("10p55");
 $person1->setOrt("Berlin");
 $person1->setStrasse("Schnellstraße");
-echo "<hr>".$person1->getAdress()."<hr>";
+echo "<hr>" . $person1->getAdress() . "<hr>";
 
 var_dump($person1);

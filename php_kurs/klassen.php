@@ -76,16 +76,18 @@ class PersonB
     private $nname = 'Idaho';
     private $privatename = 'tooPrivate to tell';
 
-    function getVname(){
+    function getVname()
+    {
         return $this->vname; # $this bezieht sich auf das aktuelle Objekt
     }
-    function getNname(){
+    function getNname()
+    {
         return $this->vname;
     }
 
     function setVname(String $setvn) # functions sind default public, hier mit Datentyp string
     {
-        echo __METHOD__."<br>"; # gibt den Namen der Methode zurück
+        echo __METHOD__ . "<br>"; # gibt den Namen der Methode zurück
         $this->vname = $setvn;
     }
 
@@ -97,15 +99,14 @@ class PersonB
     public function setNname2($setnn)
     {
         $setnn = trim($setnn);
-        if(!empty($setnn)) $this->nname = $setnn;
+        if (!empty($setnn)) $this->nname = $setnn;
     }
 
-# set beide mit Array-Übergabe
+    # set beide mit Array-Übergabe
     public function setNames($namesArr)
     {
-       $this->vname = $namesArr[0];
+        $this->vname = $namesArr[0];
         $this->nname = $namesArr[1];
-
     }
 }
 echo "<hr>------- Namen setzen als Array -------------<br>";
@@ -128,3 +129,127 @@ echo "<hr>------- setNname mit default Name -------------<br>";
 $person4->setNname();
 var_dump($person4);
 
+echo "<hr>------- Constructor -------------<br>";
+
+class PersonC
+{
+    private $vname = 'Private';
+
+    public function __construct($vname)
+    {
+        echo $vname . " " . __METHOD__ . "<br>";
+        $this->vname = $vname;
+        # $this->vname = setVname($vname);
+        # sinnvollerweise würde man hier die setVname-Methode benutzen, um alle Prüfungen und Bearbeitungen durchzuführen
+    }
+}
+
+$personC = new PersonC('Constructor');
+var_dump($personC);
+
+echo "<hr>------- Constructor ohne Variablendeklaration deprecated -------------<br>";
+class PersonC1
+{
+    public function __construct($vname)
+    {
+        $this->vname = $vname;
+    }
+}
+
+$personC1 = new PersonC1('Constructor ohne Var');
+var_dump($personC1);
+
+echo "<hr>------- Constructor ohne Variablen-Deklaration 2 -------------<br>";
+class PersonC2
+{
+    public function __construct(private String $vname)
+    {
+        #$this->vname = $vname; # ist so nicht mehr nötig
+    }
+}
+
+$personC2 = new PersonC2('Constructor ohne Var 2');
+var_dump($personC2);
+
+echo "<hr>------- Constructor mit Fehlerbehandlung -------------<br>";
+
+class PersonC3
+{
+    private $vname = 'Private';
+
+    public function __construct($vname)
+    {
+        echo $vname . " " . __METHOD__ . "<br>";
+        if (empty($vname)) {
+            throw new Exception('Vname darf nicht leer sein <br>');
+        }
+        $this->vname = $vname;
+    }
+}
+try {
+    $personC3 = new PersonC3('nicht leer');
+} catch (Exception $e) {
+    echo $e;
+}
+var_dump($personC3);
+
+# zerstört das Objekt wieder
+unset($personC3); # kein Rückgabewert
+
+echo "<hr>------- Constructor und Destructor / Selbstzerstörung -------------<br>";
+
+class PersonC4
+{
+    private $vname = 'Private';
+
+    public function __construct($vname)
+    {
+        echo $vname . " " . __METHOD__ . "<br>";
+        $this->vname = $vname;
+    }
+    public function getVname()
+    {
+        return $this->vname;
+    }
+    # -- der Destructor wird ausgeführt wenn das Objekt nicht mehr benutzt wird ...
+    public function __destruct()
+    {
+        echo __METHOD__; # Ausgabe : PersonC4::__destruct
+    }   
+}
+
+$personC4 = new PersonC4('Ich geh kaputt');
+
+var_dump($personC4); # hier wird noch was ausgegeben...
+# weil hier gibt es noch eine Verwendung für das Objekt
+echo "<br>wie ist mein Name? ".$personC4->getVname()."<br>";
+var_dump($personC4); # keine Ausgabe mehr
+# letzte Ausgabe: PersonC4::__destruct
+
+echo "<hr>------- Class mit integrierter Unterklasse / Datentyp ------<br>";
+
+class Kontakt {
+    # Attribute in einzubindenen Klassen müssen public sein
+    public $telefon = '000 000';
+    public $fax = '00 00';
+    function __construct($tel = '', $fax = '')
+    {
+        $this->telefon = $tel;
+        $this->fax = $fax;
+    }
+}
+class PersonK {
+    private $vname = '';
+    # in der Oberklasse können die eingebundenen Klassen dann privat gesetzt werden
+    private $kontakt = NULL;
+
+    function __construct($vname, $tel='000', $fax='000')
+    {
+        $this->vname = $vname;
+        # erst im Konstruktor kann das Kontakt-Objekt angelegt werden
+        $this->kontakt = new Kontakt($tel,$fax);
+    }
+}
+
+$personK = new PersonK('PersonKa', '0301', '0302');
+var_dump($personK);
