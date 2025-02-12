@@ -2,7 +2,9 @@
 # diese Funktion prüft ob ein eingegebener String aus den Zahlen 0-9 besteht
 # wenn ja return: true
 # bei nein return: false
+# Länge des Strings egal
 
+# Alternative: strspn()  https://www.w3schools.com/php/func_string_strspn.asp
 function str_isof_int($string)
 {
     $notok = '';

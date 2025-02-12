@@ -215,20 +215,21 @@ class PersonC4
     public function __destruct()
     {
         echo __METHOD__; # Ausgabe : PersonC4::__destruct
-    }   
+    }
 }
 
 $personC4 = new PersonC4('Ich geh kaputt');
 
 var_dump($personC4); # hier wird noch was ausgegeben...
 # weil hier gibt es noch eine Verwendung für das Objekt
-echo "<br>wie ist mein Name? ".$personC4->getVname()."<br>";
+echo "<br>wie ist mein Name? " . $personC4->getVname() . "<br>";
 var_dump($personC4); # keine Ausgabe mehr
 # letzte Ausgabe: PersonC4::__destruct
 
 echo "<hr>------- Class mit integrierter Unterklasse / Datentyp ------<br>";
 
-class Kontakt {
+class Kontakt
+{
     # Attribute in einzubindenen Klassen müssen public sein
     public $telefon = '000 000';
     public $fax = '00 00';
@@ -238,18 +239,88 @@ class Kontakt {
         $this->fax = $fax;
     }
 }
-class PersonK {
+class PersonK
+{
     private $vname = '';
     # in der Oberklasse können die eingebundenen Klassen dann privat gesetzt werden
     private $kontakt = NULL;
 
-    function __construct($vname, $tel='000', $fax='000')
+    function __construct($vname,  $tel = '000', $fax = '000')
     {
         $this->vname = $vname;
         # erst im Konstruktor kann das Kontakt-Objekt angelegt werden
-        $this->kontakt = new Kontakt($tel,$fax);
+        $this->kontakt = new Kontakt($tel, $fax);
     }
 }
 
 $personK = new PersonK('PersonKa', '0301', '0302');
 var_dump($personK);
+
+echo "<hr>------- Übergabe benannter Values ------<br>";
+$personK2 = new PersonK('PersonK2', fax: '0300');
+var_dump($personK2);
+
+echo "<hr>------- Übergabe eines Objektes (Kontakt) ------<br>";
+class PersonK3
+{
+    public $vname = '';
+    public $kontakt = NULL;
+
+    function __construct($vname, Kontakt $kontakt) # Angabe Datentyp Kontakt ist optional - 
+    {
+        $this->vname = $vname;
+        # hier wird ein Objekt Kontakt (s.o.) übergeben
+        # Prüfung ob es von Typ Kontakt ist mit "instanceof"
+        if ($kontakt instanceof Kontakt) {
+            $this->kontakt = $kontakt;
+        }
+    }
+}
+$kontakt = new Kontakt('0303', '0304');
+$personK3 = new PersonK3('PersonK3', $kontakt);
+var_dump($personK3);
+var_dump($personK3->kontakt->telefon); # geht so nur mit public kontakt - bei private braucht man einen Getter
+
+# -------- clone($personK3) VORSICHT MIT REFERENZEN !! -----------
+echo "<hr>------- clone $personK3  VORSICHT MIT REFERENZEN !! ------<br>";
+$personK4 = clone ($personK3);
+var_dump($personK4);
+$personK4->vname = 'PersonK4';
+$personK4->kontakt->fax = '2345';
+var_dump($personK4);
+
+# aber alle Referenzen innerhalb des Objektes gehen auf das gleiche Objekt ($kontakt wird also nur referenziert)
+# deswegen wird auch in $personK3 die fax-nr geändert
+var_dump($personK3);
+
+# und auch $kontakt selbst wird geändert
+var_dump($kontakt);
+
+echo "<hr>------- clone mit echtem clone der Referenzen ------<br>";
+class PersonK5
+{
+    public $vname = '';
+    public $kontakt = NULL;
+
+    function __construct($vname, Kontakt $kontakt)
+    {
+        $this->vname = $vname;        
+        if ($kontakt instanceof Kontakt) {
+            $this->kontakt = $kontakt;
+        }
+    }
+    # hier wird das clonen der enthaltenen Referenz-Objekte definiert
+    function __clone(){
+        $this->kontakt = clone $this->kontakt;
+    }
+}
+$kontakt = new Kontakt('0333', '0344');
+$personK5 = new PersonK5('PersonK5', $kontakt);
+var_dump($personK5);
+
+$personK5clone = clone $personK5;
+var_dump($personK5clone);
+$personK5clone->vname = 'physical PersonK5-Clone';
+$personK5clone->kontakt->fax = '222222';
+var_dump($personK5clone);
+var_dump($personK5);

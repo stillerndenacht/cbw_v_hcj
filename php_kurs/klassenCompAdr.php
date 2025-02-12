@@ -1,62 +1,23 @@
 <?php
-class PersonAufg
-{
-    private $vname = '';
-    private $nname = '';
-    private $emails = [];
+class Adress {
     private $plz = '';
     private $ort = '';
     private $strasse = '';
 
+function __construct($plz = '', $ort='',$strasse='')
+{
+    $this->setPlz($plz);
+    $this->setOrt($ort);
+    $this->setStrasse($strasse);
+}
 
-
-
-    public function getVname()
-    {
-        return $this->vname;
-    }
-
-    public function setVname(String $vname = '')
-    {
-        $this->vname = $vname;
-    }
-
-    public function getNname()
-    {
-        return $this->nname;
-    }
-
-    public function setNname(String $nname)
-    {
-        $this->nname = $nname;
-    }
-    # ------------ emails --------
-    public function getEmails()
-    {
-        return $this->emails;
-    }
-
-    public function setEmails(...$emails)
-    {
-
-        $emaillist = [];
-
-        foreach ($emails as $email) {
-
-            if (!in_array($email, $emaillist)) {
-                $emaillist[] = $email;
-            }
-        }
-        sort($emaillist);
-        $this->emails = $emaillist;
-    }
-    # ---------- str_is_of_int --------
+    # ---- prüfung String plz ---
     private function str_isof_int($string)
     {
         $notok = '';
         $strarr = str_split($string);
         $check = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-        #var_dump($strarr);
+        
         foreach ($strarr as $a) {
             var_dump($a);
             echo $a;
@@ -116,23 +77,5 @@ class PersonAufg
         $strasse = trim($strasse);
         $this->strasse = $strasse;
     }
-    # ------------ adresse -------------
-    public function getAdress()
-    {
-        $adress = "$this->vname $this->nname $this->strasse $this->plz $this->ort";
-        return $adress;
-    }
+    
 }
-
-$person1 = new PersonAufg;
-$person2 = new PersonAufg;
-
-$person1->setVname('Erich');
-$person1->setNname('Einser');
-$person1->setEmails('ericheinser@emx.ee', 'e.einser@email.ee');
-$person1->setPlz("10p55");
-$person1->setOrt("Berlin");
-$person1->setStrasse("Schnellstraße");
-echo "<hr>" . $person1->getAdress() . "<hr>";
-
-var_dump($person1);
