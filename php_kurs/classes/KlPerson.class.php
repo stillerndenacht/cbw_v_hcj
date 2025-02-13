@@ -1,6 +1,5 @@
 <?php
-include 'klassenCompAdr.php';
-#include 'klassenCompComp.php';
+
 
 
 class Person
