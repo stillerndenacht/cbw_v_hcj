@@ -10,16 +10,19 @@ class Blog
     public $blogdate = '';
     public $blogitems = [];
     private $blogitcount;
+    public static $blognames = [];
 
     public function __construct(String $blogH1 = 'new Blog')
     {
 
         $this->blogH1 = $blogH1;
         $this->loadBlogseri();
-        var_dump($this);
+        
         $this->setBlogdate(false);
 
         $this->saveBlogseri();
+self::loadBlognames();
+        self::saveBlognames($this->blogH1);
     }
 
 
@@ -54,14 +57,15 @@ class Blog
         $this->saveBlogseri();
     }
     # ---------- single Item -----------
-    # #### hier muss die der blogitcount mit übergeben werden, damit er im Fall von load weiter gezählt wird in Blogitem
+   
     public function setBlogitem(String $blogH2 = 'Neues Item', String $blogP = 'Text')
     {
-        if (!empty($this->blogitcount)) {
-            $count = $this->blogitcount;
-        } else {
-            $count = false;
-        }
+        $this->loadBlogseri();
+        
+        $this->blogitcount = count($this->blogitems);
+        echo "<br> blogitcount".$this->blogitcount;
+        $count = ($this->blogitcount)+1;
+        
         $blogitem = new Blogitem($blogH2, $blogP, $count);
         $this->setBlogitems($blogitem);
     }
@@ -74,9 +78,8 @@ class Blog
     public function setBlogitems(Blogitem $blogitem)
     {
         $this->blogitems[] = $blogitem;
-        $this->blogitcount = $blogitem->getBlogitid();
-        echo "<br>dump blogitem<br>";
-        var_dump($blogitem->getBlogitid());
+        $this->blogitcount = $blogitem->getBlogitid();        
+        
         $this->saveBlogseri();
     }
     # -------- save ------------
@@ -89,28 +92,40 @@ class Blog
     private function loadBlogseri()
     {
         if (file_exists($this->blogH1 . 'seri.txt')) {
-            #echo 'file exists';
+           
             $loadseri = unserialize(file_get_contents($this->blogH1 . 'seri.txt'));
-            var_dump($loadseri);
+           
             $this->blogitems = $loadseri->blogitems ?? [];
             $this->blogdate = $loadseri->blogdate;
             $this->blogitcount = $loadseri->blogitcount;
         }
     }
+    # --------- save Blognames ---------
+    public static function saveBlognames($blogname){
+        self::$blognames[] = $blogname;
+        $saveseriblognames = serialize(self::$blognames);
+        file_put_contents('Blognamesseri.txt', $saveseriblognames);
+    }
+    # --------- load Blognames ----------
+    public static function loadBlognames(){
+        if (file_exists('Blognamesseri.txt')){
+            $loadseriblognames = unserialize(file_get_contents('Blognamesseri.txt'));
+            self::$blognames = $loadseriblognames;
+        }
+    }
 }
 # --------------------------
 # muss noch ausgelagert werden
-$blog1 = new Blog('blog1');
+#$blog1 = new Blog('blog1');
 #var_dump($blog1);
 # $blog1->setBlogdate();
 // var_dump($blog1);
-// $blog1->setBlogitem('Blogitem1', 'New Set Blogitem 1');
-// $blog1->setBlogitem('Blogitem2', 'New Set Blogitem 2');
-$blog1->setBlogitem('Blogitem3', 'New Set Blogitem 3');
-$blog1->setBlogitem('Blogitem4', 'New Set Blogitem 4');
+#log1->setBlogitem('Blogitem2', 'New Set Blogitem 2');
+// $blog1->setBlogitem('Blogitem3', 'New Set Blogitem 3');
+// $blog1->setBlogitem('Blogitem4', 'New Set Blogitem 4');
 // $blogitem1 = new Blogitem('BlogItem1', 'Text 1');
 // $blog1->setBlogitems($blogitem1);
 
 // $blogitem2 = new Blogitem('BlogItem2', 'Text 2');
 // $blog1->setBlogitems($blogitem2);
-var_dump($blog1);
+#var_dump($blog1);

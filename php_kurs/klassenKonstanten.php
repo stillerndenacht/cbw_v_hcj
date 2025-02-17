@@ -22,15 +22,15 @@ class Test
     {
         echo "<hr>----- Ausgabe der globalen Konstante in function<br>";
         # ----- Ausgabe der globalen Konstante
-        echo KONSTANZE."<br>"; 
+        echo KONSTANZE . "<br>";
 
         # echo TESTKONST; # geht nicht
         # echo $this->TESTKONST; # geht auch nicht
 
         echo "<hr>---- Ausgabe der Klassenkonstante in function<br>";
         # ---- Ausgabe der Klassenkonstante
-        echo Test::TESTKONST."<br>";      
-        echo TEST::PRIVATETEST."<br>";
+        echo Test::TESTKONST . "<br>";
+        echo TEST::PRIVATETEST . "<br>";
 
         echo "<hr>---- Ausgabe der Klassenvariable in function<br>";
         # ---- Ausgabe der Klassenvariable
@@ -44,18 +44,50 @@ $obj = new Test();
 
 echo "<hr>---- Ausgabe der Klassenkonstante<br>";
 # ---- Ausgabe der Klassenkonstante
-echo Test::TESTKONST."<br>";
-echo $obj::TESTKONST."<br>";
+echo Test::TESTKONST . "<br>";
+echo $obj::TESTKONST . "<br>";
 
 echo "<hr>---- Ausgabe und Änderung der Klassenvariable<br>";
 # ---- Ausgabe und Änderung der Klassenvariable
-echo Test::$staticVar."<br>";
+echo Test::$staticVar . "<br>";
 Test::$staticVar = 55; # Änderung des Klassenattributs
-echo Test::$staticVar."<br>";
-echo $obj::$staticVar."<br>";
+echo Test::$staticVar . "<br>";
+echo $obj::$staticVar . "<br>";
 
 echo "<hr>--- private Konstanten sind außerhalb des Objektes nur über functions zugänglich<br>";
 # --- private Konstanten sind außerhalb des Objektes nur über functions zugänglich
 # echo TEST::PRIVATETEST;
 # echo $obj::PRIVATETEST;
 $obj->test();
+
+echo "<hr>------- Zugriff mit self<br>";
+# ------- Zugriff mit self - frühe statische Bindung -----
+class Teststatic
+{
+    const TESTS = 20;
+    public static $varclass = 22;
+    public $varobj = 'objvar';
+
+    function tests()
+    {# self funktioniert bzgl. der Klasse wie this 
+        echo self::TESTS. "<br>"; 
+        echo self::$varclass. "<br>";
+        echo "----------------<br>";
+    }
+# Klassenmethode
+    public static function teststaticf(){
+        echo __METHOD__. "<br>";
+        # kein Zugriff auf Objekt-Variablen
+        # echo $this->varobj;
+    }
+}
+$teststatic = new Teststatic();
+echo Teststatic::TESTS. "<br>";
+echo $teststatic::TESTS. "<br>";
+echo "<hr>";
+
+$teststatic->tests(). "<br>";
+$teststatic->teststaticf();
+$teststatic::teststaticf();
+
+
