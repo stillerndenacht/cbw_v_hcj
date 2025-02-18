@@ -1,0 +1,4 @@
+pfad:
+C:\Users\....\AppData\Roaming\Code\User\settings.json
+Einstellung:
+"php.validate.executablePath": ""
