@@ -98,19 +98,33 @@ class Company
             $this->cars[] = $car;
         }
     }
-    function getCarlist(){
-        foreach($this->cars as $car){
+    function getCarlist($type = 'alle Fahrzeuge')
+    {       
+        echo "<hr> ----- Neue Liste für ".$type." ------";
+        if ($type == 'alle Fahrzeuge') {
+            $cars = $this->cars;
+        } else {
+            
+            foreach($this->cars as $car){
+                if($car instanceof $type){
+                    $cars[] = $car;
+                };
+            }
+        }
+
+        foreach ($cars as $car) {
             $zuladung = "k.A.";
-            if($car instanceof LKW){
+            if ($car instanceof LKW) {
                 $zuladung = $car->zuladung;
             }
-            echo "<hr>Kennzeichen : ".$car->kennzeichen." | Fahrgestellnummer : ".$car->getFahrgestellnr()." | Sitzplätze : ".$car->getSitzpl()." | Zuladung : ".$zuladung;
+            echo "<hr>Kennzeichen : " . $car->kennzeichen . " | Fahrgestellnummer : " . $car->getFahrgestellnr() . " | Sitzplätze : " . $car->getSitzpl() . " | Zuladung : " . $zuladung;
         }
         echo "<hr>";
     }
-    function rentCar($car, $person, $time = 1){
+    function rentCar($car, $person, $time = 1)
+    {
         $kennzeichen = $car->getKennzeichen();
-        echo $person." mietet ".$kennzeichen." für ".$time." Stunden von der Firma ".$this->company.".";
+        echo $person . " mietet " . $kennzeichen . " für " . $time . " Stunden von der Firma " . $this->company . ".";
     }
 }
 
@@ -120,6 +134,9 @@ $iveco = new LKW('iveco-03-03', '0303', 3, 3500);
 echo $vw->getFahrgestellnr();
 
 $sixt = new Company('Sixt');
-$sixt->setCars($vw, $kia,$iveco);
+$sixt->setCars($vw, $kia, $iveco);
 $sixt->getCarlist();
 $sixt->rentCar($vw, 'Ferdinand', 24);
+
+$sixt->getCarlist('PKW');
+$sixt->getCarlist('LKW');

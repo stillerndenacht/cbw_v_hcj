@@ -9,7 +9,7 @@ $starttime = microtime(true);
 $title = '';
 $article = '';
 $blog = '';
-#$_POST = NULL;
+$_POST = NULL;
 var_dump($_POST);
 if (isset($_POST)) {
     var_dump($_POST);
@@ -17,7 +17,7 @@ if (isset($_POST)) {
     $blog->setBlogitem($_POST['title'], $_POST['article']);
 
     header($_SERVER["PHP_SELF"]);
-}
+} 
 #var_dump($blog);
 ?>
 <!DOCTYPE html>
@@ -54,5 +54,9 @@ if (isset($_POST)) {
         <?php echo number_format(microtime(true) - $starttime, 6, ','); ?>
     </footer>
 </body>
+<?php
+Blog::loadBlognames();
+var_dump($blognames);
+?>
 
 </html>
