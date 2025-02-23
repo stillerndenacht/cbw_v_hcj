@@ -106,3 +106,19 @@ echo "<br>---------- checkdate ---------<br>";
 var_dump(checkdate(4, 30, 1990)); # bool(true)
 echo "<br>";
 var_dump(checkdate(4, 31, 1990)); # bool(false)
+
+echo "<br>---------- deutsches Datum ---------<br>";
+# die class MyDateTime erbt von DateTime - die function deDate() wandelt die Eingabe bei Objekterzeugung in ein Datum im Format 21.02.2025
+
+class MyDateTime extends DateTime
+{
+    public function deDate()
+    {
+        $date = $this->format("d.m.Y");
+        return $date;
+    }
+}
+# Bsp. Eingabe eines Zeitstempels
+# aber auch Datumsangaben (2025-12-23) oder tomorrow, yesterday etc. sind möglich s.o. default ist "now"
+$deDate = new MyDateTime('@1740133322');
+echo $deDate->deDate();
