@@ -7,5 +7,6 @@ cors-Problem
 https://developer.mozilla.org/de/docs/Web/HTTP/CORS#spezifikationen
 https://developer.mozilla.org/de/docs/Web/API/Window/fetch
 https://developer.mozilla.org/de/docs/Web/API/RequestInit
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#setting_headers
 
 https://www.ionos.de/digitalguide/websites/web-entwicklung/javascript-fetch-api/
