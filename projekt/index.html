@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta name="keywords" content="personal startpage" />
+    <meta name=""description" content=""Hier ist eine Beschreibung meiner
+    Webseite">
+    <meta name="author" content="Mein Name" />
+    <meta charset="UTF-8" />
+    <base href="" target="_blank" />
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+    <title>personal startpage</title>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="img/Kliponius_Cartoon_rocket.svg"
+    />
+  </head>
+
+<body>
+    <h1>personal startpage</h1>
+    <p>Hier steht ein gewöhnlicher Absatztext.</p>
+    <a href="https://www.zdf.de/phoenix/phoenix-vor-ort/phoenix-die-linke-reaktionen-auf-die-wahl-100.html">link</a>
+    <script>
+        const feed = new XMLHttpRequest();
+        feed.onload = function(){
+            feedLoad(this);
+        }
+        feed.open("GET","https://www.zdf.de/rss/zdf/nachrichten");
+        // feed.open("GET","../php_kurs/xml.xml");
+        feed.send();
+        function feedLoad(feed){
+        //     console.log(feed.responseXML);
+        console.log(feed);
+        }
+
+        // let feed = "../php_kurs/xml.xml"
+        // fetch(feed)
+        // .then(feedObj => feedObj.text())
+        // .then(feedXML => myDisplay(feedXML));
+        // console.log(feedXML);
+
+        // getFeed("https://www.zdf.de/rss/zdf/nachrichten");
+        // getFeed("../php_kurs/xml.xml");
+        // async function getFeed(link) {
+        //     let feedObj = await fetch(link);
+        //     let feedXML = await feedObj.text();
+        //     console.log(feedXML);
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+
+image-links
+https://freesvg.org/cartoon-rocket-vector-drawing
+https://freesvg.org/starting-rocket
+
+cors-Problem
+https://developer.mozilla.org/de/docs/Web/HTTP/CORS#spezifikationen
+https://developer.mozilla.org/de/docs/Web/API/Window/fetch
+https://developer.mozilla.org/de/docs/Web/API/RequestInit
+
+https://www.ionos.de/digitalguide/websites/web-entwicklung/javascript-fetch-api/
