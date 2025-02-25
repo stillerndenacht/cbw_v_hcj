@@ -8,5 +8,7 @@ https://developer.mozilla.org/de/docs/Web/HTTP/CORS#spezifikationen
 https://developer.mozilla.org/de/docs/Web/API/Window/fetch
 https://developer.mozilla.org/de/docs/Web/API/RequestInit
 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#setting_headers
+https://css-tricks.com/how-to-fetch-and-parse-rss-feeds-in-javascript/
+https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
 
 https://www.ionos.de/digitalguide/websites/web-entwicklung/javascript-fetch-api/

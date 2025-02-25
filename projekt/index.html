@@ -1,7 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
-
-<head>
+  <head>
     <meta name="keywords" content="personal startpage" />
     <meta name=""description" content=""Hier ist eine Beschreibung meiner
     Webseite">
@@ -18,38 +17,66 @@
     />
   </head>
 
-<body>
+  <body>
     <h1>personal startpage</h1>
     <p>Hier steht ein gewöhnlicher Absatztext.</p>
-    <a href="https://www.zdf.de/phoenix/phoenix-vor-ort/phoenix-die-linke-reaktionen-auf-die-wahl-100.html">link</a>
+    <!-- <a
+      href="https://www.zdf.de/phoenix/phoenix-vor-ort/phoenix-die-linke-reaktionen-auf-die-wahl-100.html"
+      >link</a
+    >
+    <a id="a"
+      href="https://www.zdf.de/rss/zdf/nachrichten"
+      >link</a
+    > -->
+    <iframe sandbox="allow-same-origin"  id="iframe" src="https://www.zdf.de/rss/zdf/nachrichten"></iframe>
+    <!-- <p id="in"></p> -->
     <script>
-        const feed = new XMLHttpRequest();
-        feed.onload = function(){
-            feedLoad(this);
-        }
-        feed.open("GET","https://www.zdf.de/rss/zdf/nachrichten");
-        // feed.open("GET","../php_kurs/xml.xml");
-        feed.send();
-        function feedLoad(feed){
-        //     console.log(feed.responseXML);
-        console.log(feed);
-        }
+      // const feed = new XMLHttpRequest();
+      // feed.onload = function(){
+      //     feedLoad(this);
+      // }
 
-        // let feed = "../php_kurs/xml.xml"
-        // fetch(feed)
-        // .then(feedObj => feedObj.text())
-        // .then(feedXML => myDisplay(feedXML));
+      // feed.open("GET","https://www.zdf.de/rss/zdf/nachrichten");
+      // // feed.open("GET","../php_kurs/xml.xml");
+      // feed.send();
+      // function feedLoad(feed){
+      // //     console.log(feed.responseXML);
+      // console.log(feed);
+      // }
+
+      // let feed = "../php_kurs/xml.xml"
+      // fetch(feed)
+      // .then(feedObj => feedObj.text())
+      // .then(feedXML => myDisplay(feedXML));
+      // console.log(feedXML);
+
+      // getFeed("https://www.zdf.de/rss/zdf/nachrichten");
+      // getFeed("../php_kurs/xml.xml");
+      // async function getFeed(link) {
+      //   let feedObj = await fetch(link, {
+      //     mode: "cors",
+      //     headers: {
+      //       Accept: "application/xhtml+xml, application/xml;q=0.9",
+      //       "Content-type": "application/xhtml+xml",
+      //     },
+      //   });
+      //   console.log(feedObj);
+      //   let feedXML = await feedObj.text();
+      //   console.log(feedXML);
+      // }
+
+      let out = document.getElementById("iframe");
+      // let outout = out.getElementsByTagName("rss").innerHTML;
+      console.log(out);
+      // document.getElementById("in").innerHTML = "here"+ out;
+
+      getFeed(out);
+      async function getFeed(link) {
+        let feedObj = await fetch(link);
+        console.log(feedObj);
+        let feedXML = await feedObj.text();
         // console.log(feedXML);
-
-        // getFeed("https://www.zdf.de/rss/zdf/nachrichten");
-        // getFeed("../php_kurs/xml.xml");
-        // async function getFeed(link) {
-        //     let feedObj = await fetch(link);
-        //     let feedXML = await feedObj.text();
-        //     console.log(feedXML);
-        // }
-
+      }
     </script>
-</body>
-
+  </body>
 </html>
