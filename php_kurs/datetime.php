@@ -122,3 +122,6 @@ class MyDateTime extends DateTime
 # aber auch Datumsangaben (2025-12-23) oder tomorrow, yesterday etc. sind möglich s.o. default ist "now"
 $deDate = new MyDateTime('@1740133322');
 echo $deDate->deDate();
+
+echo "<br>---------- irgendein formatiertes Datum auf Unixtime setzen ---------<br>";
+echo (new DateTime("Wed, 26 Feb 2025 14:39:16 +0100"))->format("U");

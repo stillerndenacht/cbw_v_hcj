@@ -3,6 +3,12 @@ image-links
 https://freesvg.org/cartoon-rocket-vector-drawing
 https://freesvg.org/starting-rocket
 
+test-feeds
+https://www.chip.de/rss/chip_komplett.xml
+https://www.zdf.de/rss/zdf/nachrichten
+https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml
+
+
 cors-Problem
 https://developer.mozilla.org/de/docs/Web/HTTP/CORS#spezifikationen
 https://developer.mozilla.org/de/docs/Web/API/Window/fetch
