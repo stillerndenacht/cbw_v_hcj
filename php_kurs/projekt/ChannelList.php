@@ -1,6 +1,7 @@
 <?php
 class ChannelList
-{ use Save_Load;
+{
+    use SaveAndLoad;
 
     public $channelArray = [];
 
@@ -24,5 +25,3 @@ class ChannelList
         # if channellist in DB dann laden
     }
 }
-
-

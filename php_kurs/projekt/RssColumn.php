@@ -13,9 +13,9 @@ class RssColumn
     public function __construct($item, $channel)
     {
         $this->guid = $item->guid;
-        #$this->title = $item-> ;
+        $this->title = $item->title ;
         $this->channel = $channel;
-        $this->content = $item->description;
+        $this->content = strip_tags($item->description);
         $this->date = (new DateTime($item->pubDate))->format("U");
         $this->imagelink = $this->checkenclosure($item, 'image');
     }
@@ -23,6 +23,7 @@ class RssColumn
     public function checkenclosure($item, $what)
     {
         if ($what == 'image'){
+            $imagelink = '';
             if (($item->enclosure)) {
                 foreach ($item->enclosure->attributes() as $attrkey => $attrvalue) {
                     if (($attrkey == 'type') && ($attrvalue == 'image/jpeg')) {
