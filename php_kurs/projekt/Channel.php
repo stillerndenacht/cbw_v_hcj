@@ -1,16 +1,18 @@
 <?php
 class Channel
 {
-    public $title = '';    
+    use HelpFunctions;
+
+    public $title = '';
     public $date = 0;
     public $url = '';
     public $siteurl = '';
     public $channelcount = 0;
     public $content = [];
-    
+
 
     public function __construct($feed, $feedurl)
-    { 
+    {
         // #---------------------------
         // echo "<hr>aus Channel construct feed <br>";
         // var_dump($feed);
@@ -22,7 +24,7 @@ class Channel
         $this->title = $feed->channel->title;
         $this->date = $feed->channel->pubDate; # noch auf Unix setzen
         $this->url = $feedurl;
-        $this->siteurl = $feed->channel->link;
+        $this->siteurl = $this->removeRss($feed->channel->link);
         $this->setContent($feed, $this->title);
 
         // #---------------------------
@@ -33,11 +35,10 @@ class Channel
         // #----------------------------
 
         $this->channelcount = count($this->content);
-
     }
 
     public function setContent($feed, $channel)
-    { 
+    {
         // #------------------------
         // echo "<hr>aus Channel setContent feed <br>";
         // var_dump($feed->channel->item);

@@ -2,9 +2,9 @@
 include_once 'intit.inc.php';
 $channellist = new ChannelList;
 #var_dump($channellist);
-#$channellist->setChannel('https://www.zdf.de/rss/zdf/nachrichten');
+$channellist->setChannel('https://www.zdf.de/rss/zdf/nachrichten');
 $channellist->setChannel('https://www.chip.de/rss/chip_komplett.xml');
-var_dump($channellist);
+#var_dump($channellist);
 ?>
 <!-- ------------------------------------------------- -->
 <!DOCTYPE html>
@@ -43,14 +43,18 @@ var_dump($channellist);
 
   ?>
     <section>
-    <a href="<?= $channel->siteurl ?>"><h2><?= $channel->title ?></h2></a>
+      <a href="<?= $channel->siteurl ?>">
+        <h2><?= $channel->title ?></h2>
+      </a>
       <p><?= $channel->date ?></p>
       <p>Anzahl der Einträge: <?= $channel->channelcount ?></p>
       <!-- <p>Link: <a href="<?= $channel->siteurl ?>"><?= $channel->siteurl ?></a></p> -->
       <?php foreach ($channel->content as $item): ?>
         <article>
-          <h3><?= $item->title ?></h3>
-          <img src="<?= $item->imagelink ?>" alt="">
+          <a href="<?= $item->url ?>" target="_blank">
+            <h3><?= $item->title ?></h3></a>
+            <img src="<?= $item->imagelink ?>" alt="">
+          
           <p><?= $item->content ?></p>
           <p><?= $item->date ?></p>
           <p><?= $item->guid ?></p>

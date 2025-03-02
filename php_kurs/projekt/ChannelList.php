@@ -1,7 +1,7 @@
 <?php
 class ChannelList
 {
-    use SaveAndLoad;
+    use HelpFunctions;
 
     public $channelArray = [];
 

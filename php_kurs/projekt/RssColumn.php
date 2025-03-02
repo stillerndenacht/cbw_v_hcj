@@ -17,6 +17,7 @@ class RssColumn
         $this->channel = $channel;
         $this->content = strip_tags($item->description);
         $this->date = (new DateTime($item->pubDate))->format("U");
+        $this->url = $item->link;
         $this->imagelink = $this->checkenclosure($item, 'image');
     }
 
