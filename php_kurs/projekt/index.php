@@ -3,11 +3,14 @@
 <?php
 include_once 'intit.inc.php';
 $channellist = new ChannelList;
+// use PDOConnect_projekt;
+// use PDOFunctions;
 #var_dump($channellist);
 $channellist->setChannel('https://www.zdf.de/rss/zdf/nachrichten');
 $channellist->setChannel('https://www.chip.de/rss/chip_komplett.xml');
 // $channellist->setChannel('https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml');
-#var_dump($channellist);
+var_dump($channellist);
+#$dbproj = $channellist->createDB('DBProjekt');
 ?>
 <!-- ------------------------------------------------- -->
 <!-- <!DOCTYPE html>
