@@ -21,7 +21,9 @@ class ChannelList
     }
     public function savechannellist()
     {
-        $this->createDB($this->dbproj, 'DBProjekt');
+        $this->createDB('dbprojekt');
+        $this->createTableDB('dbprojekt');
+        $this->fillTableDB('dbprojekt', $this->channelArray);
         #var_dump($dbproj);
         # SQL-Statement um zu saven
     }
