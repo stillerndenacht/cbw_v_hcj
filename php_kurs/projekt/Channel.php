@@ -21,10 +21,10 @@ class Channel
         // echo "<hr>";
         // #----------------------------
         # if $feedurl schon in der DB load aus DB und append - else:
-        $this->title = $feed->channel->title;
-        $this->date = $feed->channel->pubDate; # noch auf Unix setzen
-        $this->url = $feedurl;
-        $this->siteurl = $this->removeRss($feed->channel->link);
+        $this->title    = htmlspecialchars($feed->channel->title);
+        $this->date     = (new DateTime($feed->channel->pubDate))->format("U");
+        $this->url      = $feedurl;
+        $this->siteurl  = $this->removeRss($feed->channel->link);
         $this->setContent($feed, $this->title);
 
         // #---------------------------

@@ -17,7 +17,6 @@ trait PDOFunctions
 
         try {
             $dbproj = new PDO("mysql:host=$host; dbname=$dbname; port=$port", $user, $pw, $options);
-            var_dump($dbproj);
         } catch (PDOException $e) {
             echo $e->getMessage();
             die("<br>Diese DB : $dbname existiert nicht");
@@ -30,12 +29,15 @@ trait PDOFunctions
     {
         $dbproj = $this->connectDB();
         $sql = "             
-            CREATE DATABASE IF NOT EXISTS $dbname; 
+            CREATE DATABASE IF NOT EXISTS $dbname;
             USE $dbname; 
             ";
-        echo $sql . "<br>";
+        #echo $sql . "<br>";
 
         $dbproj->exec($sql);
+        echo "<hr> aus createDB :";
+        var_dump($dbproj);
+        echo "<hr>";
     }
 
     public function deleteDB($dbname)
@@ -46,7 +48,7 @@ trait PDOFunctions
             USE $dbname;
             ";
 
-        echo $sql . "<br>";
+        #echo $sql . "<br>";
 
         $dbproj->exec($sql);
     }
@@ -57,18 +59,17 @@ trait PDOFunctions
         $sql2 = "
             CREATE TABLE IF NOT EXISTS channelsall
             (
-            channeltitle VARCHAR(100),
-            channelhome VARCHAR(100),
-            channellink VARCHAR(100),
-            channeldate INTEGER,
-            PRIMARY KEY (channeltitle)
+            title VARCHAR(100),
+            siteurl VARCHAR(100),
+            url VARCHAR(100),
+            date INTEGER,
+            PRIMARY KEY (title)
             );
             USE $dbname;
             ";
-        
-        echo $sql2 . "<br>";
+
+        #echo $sql2 . "<br>";
         $dbproj->exec($sql2);
-        #$dbproj = $this->connectDB();
 
         $sql3 = "
             CREATE TABLE IF NOT EXISTS itemsall
@@ -80,36 +81,44 @@ trait PDOFunctions
             date INTEGER,
             url VARCHAR(100),
             imagelink VARCHAR(255),
-            read BOOL,
-            PRIMARY KEY (guid),
-            FOREIGN KEY (channel) REFERENCES channelsall(channeltitle)
+            readed BOOLEAN,
+            PRIMARY KEY (guid)            
             );
             USE $dbname;
             ";
-        
-        echo $sql3 . "<br>";
+        # FOREIGN KEY (channel) REFERENCES channelsall(channeltitle)
+        # das geht leider nicht, weil das einen Unique Index ergibt, der dann erkannt wird - was dazu führt, dass für jeden channel nur ein item in der DB landet
+        #echo $sql3 . "<br>";
         $dbproj->exec($sql3);
     }
 
-    public function fillTableDB($dbname, $channellist) # $channellist > channelArray anpassen
+    public function fillTableDB($dbname, $channelArray)
     {
         $dbproj = $this->connectDB();
 
-        foreach ($channellist as $channel) {
-            $channeltitle = $channel->title;
-            $channelhome = $channel->siteurl;
-            $channellink = $channel->url;
-            $channeldate = $channel->date; # date muss in Channel noch auf Unix gebaut werden
+        foreach ($channelArray as $channel) {
+            #var_dump($channel->title);
+            // if ($channel->title) {
+            $title      = $channel->title;
+            $siteurl    = $channel->siteurl;
+            $url        = $channel->url;
+            $date       = $channel->date;
+            // } else {
+            //     $channeltitle = $channel['channeltitle'];
+            //     $channelhome = $channel['channelhome'];
+            //     $channellink = $channel['channellink'];
+            //     $channeldate = $channel['channeldate'];
+            // }
 
 
             $sql4 = "
             INSERT INTO channelsall
-            (channeltitle, channelhome, channellink, channeldate)
-            VALUES('$channeltitle','$channelhome','$channellink','$channeldate')
+            (title, siteurl, url, date)
+            VALUES('$title','$siteurl','$url','$date')
             ON DUPLICATE KEY UPDATE
-            channelhome = $channelhome,
-            channellink = $channellink,
-            channeldate = $channeldate;
+            siteurl = '$siteurl',
+            url = '$url',
+            date = $date;
             USE $dbname;
             ";
 
@@ -117,25 +126,61 @@ trait PDOFunctions
             $dbproj->exec($sql4);
 
             foreach ($channel->content as $item) {
-                $channel = $channel->title;
+
+                $channel = $item->channel;
                 $guid = $item->guid;
                 $title = $item->title;
                 $content = $item->content;
                 $date = $item->date;
                 $url = $item->url;
                 $imagelink = $item->imagelink;
-                $read = $item->read;
+                $readed = $item->readed;
 
                 $sql5 = "
-        INSERT IGNORE INTO itemsall
-        (channel, guid, title, content, date, url, imagelink, read)
-        VALUES('$channel','$guid','$title','$content','$date','$url','$imagelink','$read');
-        USE $dbname;
-        ";
+                INSERT IGNORE INTO itemsall
+                (channel, guid, title, content, date, url, imagelink, readed)
+                VALUES('$channel','$guid','$title','$content',$date,'$url', '$imagelink','$readed');
+                USE $dbname;
+                ";
 
-                echo $sql5 . "<br>";
+                #echo $sql5 . "<br>";
                 $dbproj->exec($sql5);
             }
         }
+    }
+
+    # ---------------------------------------------------
+
+    public function getTablesDB($dbname, $channelArray)
+    {
+        $dbproj = $this->connectDB();
+        #var_dump($dbproj);
+        $dbproj->exec("USE $dbname");
+        $sql6 = "
+        SELECT * FROM channelsall;
+        ";
+
+        echo $sql6 . "<br>";
+        $statement = $dbproj->query($sql6);
+        var_dump($statement);
+        $dbchannellist = $statement->fetchAll();
+        echo "<hr>";
+        #var_dump($dbchannellist);
+        foreach ($dbchannellist as $channel) {
+            echo "<hr>";
+            #var_dump($channel);
+            if (!in_array($channel, $channelArray)) {
+                $channelArray[] = $channel;
+                echo $channel['title'] . " filled in Array";
+            } else {
+                echo $channel['title'] . " filled not in Array";
+            }
+        }
+        // echo "<hr>";
+        // var_dump($channelArray);
+        $this->channelArray = $channelArray;
+        // echo "<hr>--- two channelArrays ----<hr>";
+        // var_dump($this->channelArray);
+        // echo "<hr>";
     }
 }

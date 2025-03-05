@@ -3,6 +3,18 @@ trait HelpFunctions
 {
     use HelpFunctions2;
 
+    public function feedurlexists($feedurl, $channelArray)
+    {
+        foreach (($channelArray) as $channel) {
+            echo "<hr>";
+            var_dump($channel);
+            echo "<hr>";
+            if ($channel['url'] == $feedurl) {
+                echo "<hr>".$feedurl."<hr>";
+                return $channel;
+            }
+        }
+    }
     public function loadfeed($feedurl)
     {
         if (($feed = simplexml_load_file($feedurl)) != false) {
@@ -10,7 +22,7 @@ trait HelpFunctions
         }
         return $feedObj;
     }
-    
+
     # ---- entfernt den rss Teil aus der url (verwendet stripUrlPartsOut und checkContentType)
     public function removeRss($url)
     {
@@ -20,7 +32,8 @@ trait HelpFunctions
         return $urlnew;
     }
 }
-trait HelpFunctions2{
+trait HelpFunctions2
+{
 
     # ---- Check eines Links gibt den Content-Type aus dem Header zurück ---
     public function checkContentType(String $url)

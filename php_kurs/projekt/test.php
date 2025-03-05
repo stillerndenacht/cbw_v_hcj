@@ -101,4 +101,22 @@ function stripUrlPartsOut($url, array $typetocheck, array $stripout)
     return $urlnew;
 }
 var_dump(stripUrlPartsOut($url, $typetocheck, $stripout));
-dirname
+#--------------------------------------------
+echo "<hr>";
+$x = "//:' hallo '<br>";
+echo $x;
+echo htmlspecialchars($x);
+echo "<br>";
+var_dump(htmlspecialchars($x));
+echo "<hr>";
+echo htmlentities($x);
+echo "<br>";
+var_dump(htmlentities($x));
+
+echo "<br>";
+$date6 = new DateTime("@1741186267");
+echo $date6->format("d.m.Y H:i:s");
+echo "<br>";
+echo "<br>";
+$date6 = new DateTime("@1741185900");
+echo $date6->format("d.m.Y H:i:s");

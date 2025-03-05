@@ -3,18 +3,15 @@
 <?php
 include_once 'intit.inc.php';
 $channellist = new ChannelList;
-// use PDOConnect_projekt;
-// use PDOFunctions;
-#var_dump($channellist);
+#$channellist->deleteDB('dbprojekt');
+
 $channellist->setChannel('https://www.zdf.de/rss/zdf/nachrichten');
 $channellist->setChannel('https://www.chip.de/rss/chip_komplett.xml');
-// $channellist->setChannel('https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml');
-var_dump($channellist);
-#$dbproj = $channellist->createDB('DBProjekt');
+$channellist->setChannel('https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml');
+#var_dump($channellist);
+
 ?>
 <!-- ------------------------------------------------- -->
-<!-- <!DOCTYPE html>
-<html lang="de"> -->
 
 <head>
   <meta name="keywords" content="personal startpage" />
@@ -39,11 +36,11 @@ var_dump($channellist);
     foreach ($channellist->channelArray as $channel):
     ?>
       <section>
-        <a href="<?= $channel->siteurl ?>">
-          <h2><?= $channel->title ?></h2>
+        <a href="<?= $channel['siteurl'] ?>">
+          <h2><?= $channel['title'] ?></h2>
         </a>
         <div class=headline>
-          <p><?= $channel->date ?></p>
+          <p><?= $channel['date'] ?></p>
           <p>Anzahl der Einträge: <?= $channel->channelcount ?></p>
         </div>
         <!-- <p>Link: <a href="<?= $channel->siteurl ?>"><?= $channel->siteurl ?></a></p> -->

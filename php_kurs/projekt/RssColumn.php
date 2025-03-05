@@ -8,14 +8,14 @@ class RssColumn
     public $date = 0;
     public $url = '';
     public $imagelink = '';
-    public $read = false;
+    public $readed = false;
 
     public function __construct($item, $channel)
     {
         $this->guid = $item->guid;
-        $this->title = $item->title ;
+        $this->title = htmlspecialchars($item->title) ;
         $this->channel = $channel;
-        $this->content = strip_tags($item->description);
+        $this->content = htmlspecialchars(strip_tags($item->description));
         $this->date = (new DateTime($item->pubDate))->format("U");
         $this->url = $item->link;
         $this->imagelink = $this->checkenclosure($item, 'image');
