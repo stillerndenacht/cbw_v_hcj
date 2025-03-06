@@ -5,9 +5,9 @@ include_once 'intit.inc.php';
 $channellist = new ChannelList("dbtestprojekt");
 #$channellist->deleteDB('dbprojekt');
 
-$channellist->setChannel('https://www.zdf.de/rss/zdf/nachrichten');
+#$channellist->setChannel('https://www.zdf.de/rss/zdf/nachrichten');
 #$channellist->setChannel('https://www.chip.de/rss/chip_komplett.xml');
-$channellist->setChannel('https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml');
+#$channellist->setChannel('https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml');
 #$channellist->setChannel('https://www.tagesschau.de/ausland/ozeanien/index~rss2.xml');
 
 
@@ -41,26 +41,24 @@ $channellist->setChannel('https://www.tagesschau.de/infoservices/alle-meldungen-
           <h2><?= $channel['title'] ?></h2>
         </a>
         <div class=headline>
-          <p><?= $channel['date'] ?></p>
-          <!-- <p>Anzahl der Einträge: <?= $channel->channelcount ?></p> -->
+          <p><?= (new DateTime("@".$channel['date']))->format("d.m.Y H:i:s") ?></p>
+          <p>Anzahl der Einträge: <?= count($channellist->dbchannelArrayItems[$channel['title']]) ?></p>
         </div>
-        <!-- wie kommen jetzt die richtigen items in den block?
-         vielleicht wenn title in channel und key bei dbchannelArrayItems gleich 
-         dann nimm dbchannelArrayItems[$channel['title']] als ($channel->content) -->
+        
         <div id="articlearea">
-          <?php foreach ($channel->content as $item): ?>
+          <?php foreach ($channellist->dbchannelArrayItems[$channel['title']] as $item): ?>
             <article>
-              <div class=headline><a href="<?= $item->url ?>" target="_blank">
-                  <h3><?= $item->title ?></h3>
+              <div class=headline><a href="<?= $item['url'] ?>" target="_blank">
+                  <h3><?= $item['title'] ?></h3>
                 </a>
-                <p><?= $item->date ?></p>
+                <p><?= (new DateTime("@".$item['date']))->format("d.m.Y H:i:s") ?></p>
               </div>
               <div class="itemcontent">
-                <img src="<?= $item->imagelink ?>" alt="">
+               
 
-                <p><?= $item->content ?></p>
+                <p class=text><img src="<?= $item['imagelink'] ?>" alt=""><?= $item['content'] ?></p>
               </div>
-              <p><?= $item->guid ?></p>
+              <!-- <p><?= $item['guid'] ?></p> -->
             </article>
           <?php endforeach; ?>
         </div>
