@@ -3,7 +3,18 @@ trait HelpFunctions
 {
     use HelpFunctions2;
 
-    
+    public function feedurlexists($feedurl, $channelArray)
+    {
+        foreach (($channelArray) as $channel) {
+            echo "<hr>";
+            #var_dump($channel);
+            echo "<hr>";
+            if ($channel['url'] == $feedurl) {
+                echo "<hr>".$feedurl."<hr>";
+                return $channel;
+            }
+        }
+    }
     public function loadfeed($feedurl)
     {
         if (($feed = simplexml_load_file($feedurl)) != false) {

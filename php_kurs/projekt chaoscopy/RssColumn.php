@@ -1,23 +1,23 @@
 <?php
 class RssColumn
 {
-    public $guid        = '';
-    public $title       = '';
-    public $channel     = '';
-    public $content     = '';
-    public $date        = 0;
-    public $url         = '';
-    public $imagelink   = '';
-    public $readed      = false;
+    public $guid = '';
+    public $title = '';
+    public $channel = '';
+    public $content = '';
+    public $date = 0;
+    public $url = '';
+    public $imagelink = '';
+    public $readed = false;
 
     public function __construct($item, $channel)
     {
-        $this->guid     = $item->guid;
-        $this->title    = htmlspecialchars($item->title) ;
-        $this->channel  = $channel;
-        $this->content  = htmlspecialchars(strip_tags($item->description));
-        $this->date     = (new DateTime($item->pubDate))->format("U");
-        $this->url      = $item->link;
+        $this->guid = $item->guid;
+        $this->title = htmlspecialchars($item->title) ;
+        $this->channel = $channel;
+        $this->content = htmlspecialchars(strip_tags($item->description));
+        $this->date = (new DateTime($item->pubDate))->format("U");
+        $this->url = $item->link;
         $this->imagelink = $this->checkenclosure($item, 'image');
     }
 

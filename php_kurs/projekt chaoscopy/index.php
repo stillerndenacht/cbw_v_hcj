@@ -9,7 +9,11 @@ $channellist->setChannel('https://www.zdf.de/rss/zdf/nachrichten');
 #$channellist->setChannel('https://www.chip.de/rss/chip_komplett.xml');
 $channellist->setChannel('https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml');
 #$channellist->setChannel('https://www.tagesschau.de/ausland/ozeanien/index~rss2.xml');
+#var_dump($channellist);
+#$channellist->callChannelnames();
 
+#var_dump($channellist->getChannel('dbprojekt', 'CHIP'));
+#var_dump($channellist->callChannels('dbprojekt'));
 
 ?>
 <!-- ------------------------------------------------- -->
@@ -42,11 +46,9 @@ $channellist->setChannel('https://www.tagesschau.de/infoservices/alle-meldungen-
         </a>
         <div class=headline>
           <p><?= $channel['date'] ?></p>
-          <!-- <p>Anzahl der Einträge: <?= $channel->channelcount ?></p> -->
+          <p>Anzahl der Einträge: <?= $channel->channelcount ?></p>
         </div>
-        <!-- wie kommen jetzt die richtigen items in den block?
-         vielleicht wenn title in channel und key bei dbchannelArrayItems gleich 
-         dann nimm dbchannelArrayItems[$channel['title']] als ($channel->content) -->
+        <!-- <p>Link: <a href="<?= $channel->siteurl ?>"><?= $channel->siteurl ?></a></p> -->
         <div id="articlearea">
           <?php foreach ($channel->content as $item): ?>
             <article>
