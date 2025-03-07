@@ -8,7 +8,7 @@ https://www.chip.de/rss/chip_komplett.xml
 https://www.tagesschau.de/ausland/ozeanien/index~rss2.xml
 https://www.zdf.de/rss/zdf/nachrichten
 https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml
-
+https://www.heise.de/rss/heise.rdf
 
 cors-Problem
 https://developer.mozilla.org/de/docs/Web/HTTP/CORS#spezifikationen
@@ -19,3 +19,9 @@ https://css-tricks.com/how-to-fetch-and-parse-rss-feeds-in-javascript/
 https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
 
 https://www.ionos.de/digitalguide/websites/web-entwicklung/javascript-fetch-api/
+
+scroll-bar styling
+https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width
+
+scroll-behavior
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_snap/Basic_concepts

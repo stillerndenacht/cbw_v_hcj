@@ -1,0 +1,27 @@
+article { 
+	padding: 2em;
+	display:table-cell;
+	width: 60%;
+	
+}
+
+aside {
+	padding: 2em;
+	display:table-cell;
+	width: 40%;
+}
+
+@media screen and (max-width: 670px) {
+	
+	article { 
+		padding: 1.5em;
+		display: block;
+		width: 100%;
+	}
+	
+	aside {
+		padding: 1.5em;
+		display:block;
+		width: 100%;
+	}
+}

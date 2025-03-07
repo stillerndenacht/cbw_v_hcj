@@ -9,6 +9,8 @@ $channellist = new ChannelList("dbtestprojekt");
 #$channellist->setChannel('https://www.chip.de/rss/chip_komplett.xml');
 #$channellist->setChannel('https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml');
 #$channellist->setChannel('https://www.tagesschau.de/ausland/ozeanien/index~rss2.xml');
+#$channellist->setChannel('https://www.heise.de/rss/heise.rdf');
+
 
 
 ?>

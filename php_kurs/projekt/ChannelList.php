@@ -31,6 +31,7 @@ class ChannelList
     {
         $this->channelsallDBtochannelArray($this->dbname);
         $this->channelitemsDBtodbchannelArray($this->dbname);
+        
         // echo "<hr> var_dump this->channelArray <hr>";
         // var_dump($this->channelArray);
         // echo "<hr>";
